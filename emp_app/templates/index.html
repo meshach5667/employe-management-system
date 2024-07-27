@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Employee Management System!</title>
+    <style>
+      body {
+        background-color: #f8f9fa;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        max-width: 800px;
+        margin: 10% auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+      h1 {
+        margin-bottom: 1.5rem;
+        font-size: 2.5rem;
+        font-weight: bold;
+      }
+      hr {
+        margin: 20px 0;
+      }
+      .button-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .button-container a {
+        display: block;
+        padding: 10px;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 8px;
+        font-size: 1rem;
+        transition: background-color 0.3s;
+      }
+      .button-container a.bg-blue {
+        background-color: #007bff;
+      }
+      .button-container a.bg-blue:hover {
+        background-color: #0056b3;
+      }
+      .button-container a.bg-green {
+        background-color: #28a745;
+      }
+      .button-container a.bg-green:hover {
+        background-color: #1e7e34;
+      }
+      .button-container a.bg-red {
+        background-color: #dc3545;
+      }
+      .button-container a.bg-red:hover {
+        background-color: #c82333;
+      }
+      .button-container a.bg-yellow {
+        background-color: #ffc107;
+        color: black;
+      }
+      .button-container a.bg-yellow:hover {
+        background-color: #e0a800;
+      }
+      @media (min-width: 576px) {
+        .button-container {
+          flex-direction: row;
+          justify-content: space-between;
+        }
+        .button-container a {
+          width: auto;
+          flex: 1;
+          margin: 0 5px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Employee Management System!</h1>
+      <hr>
+      <div class="button-container">
+        <a class="bg-blue" href="/all_emp" role="button">View All Employees</a>
+        <a class="bg-green" href="/add_emp" role="button">Add An Employee</a>
+        <a class="bg-red" href="/remove_emp" role="button">Remove An Employee</a>
+        <a class="bg-yellow" href="/filter_emp" role="button">Filter Employee Details</a>
+      </div>
+    </div>
+  </body>
+</html>
