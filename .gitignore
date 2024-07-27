@@ -1,3 +1,5 @@
+# Ignore Python cache files
+__pycache__/
 
-/home/meshach/Employee_management_sys/emp_app/__pycache__
-/home/meshach/Employee_management_sys/venv
+# Ignore virtual environment folder
+venv/
