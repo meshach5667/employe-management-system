@@ -2,20 +2,23 @@
 <html class="no-js" lang="en" dir="ltr">
 
 
-<!-- Mirrored from pixelwibes.com/template/my-task/html/dist/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 27 Jul 2024 11:48:24 GMT -->
+<!-- Mirrored from pixelwibes.com/template/my-task/html/dist/attendance-employees.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 27 Jul 2024 11:51:15 GMT -->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>:: My-Task:: Employee Dashboard </title>
+    <title>:: My-Task:: Attendance Employess</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Favicon-->
+     <!-- plugin css file  -->
+     <link rel="stylesheet" href="assets/plugin/datatables/responsive.dataTables.min.css">
+     <link rel="stylesheet" href="assets/plugin/datatables/dataTables.bootstrap5.min.css">
     <!-- project css file  -->
     <link rel="stylesheet" href="assets/css/my-task.style.min.css">
 </head>
-
 <body  data-mytask="theme-indigo">
+
 <div id="mytask-layout">
-    
+
     <!-- sidebar -->
     <div class="sidebar px-4 py-4 py-md-5 me-0">
         <div class="d-flex flex-column h-100">
@@ -30,14 +33,13 @@
                 <span class="logo-text">My-Task</span>
             </a>
             <!-- Menu: main ul -->
-
             <ul class="menu-list flex-grow-1 mt-3">
                 <li class="collapsed">
-                    <a class="m-link active" data-bs-toggle="collapse" data-bs-target="#dashboard-Components" href="#">
+                    <a class="m-link" data-bs-toggle="collapse" data-bs-target="#dashboard-Components" href="#">
                         <i class="icofont-home fs-5"></i> <span>Dashboard</span> <span class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a>
                     <!-- Menu: Sub menu ul -->
-                    <ul class="sub-menu collapse show" id="dashboard-Components">
-                        <li><a class="ms-link active" href="index-2.html"> <span>Hr Dashboard</span></a></li>
+                    <ul class="sub-menu collapse" id="dashboard-Components">
+                        <li><a class="ms-link" href="index-2.html"> <span>Hr Dashboard</span></a></li>
                         <li><a class="ms-link" href="project-dashboard.html"> <span>Project Dashboard</span></a></li>
                     </ul>
                 </li>
@@ -72,14 +74,14 @@
                     </ul>
                 </li>
                 <li class="collapsed">
-                    <a class="m-link" data-bs-toggle="collapse" data-bs-target="#emp-Components" href="#"><i
+                    <a class="m-link active" data-bs-toggle="collapse" data-bs-target="#emp-Components" href="#"><i
                             class="icofont-users-alt-5"></i> <span>Employees</span> <span class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a>
                     <!-- Menu: Sub menu ul -->
-                    <ul class="sub-menu collapse" id="emp-Components">
+                    <ul class="sub-menu collapse show" id="emp-Components">
                         <li><a class="ms-link" href="members.html"> <span>Members</span></a></li>
                         <li><a class="ms-link" href="employee-profile.html"> <span>Members Profile</span></a></li>
                         <li><a class="ms-link" href="holidays.html"> <span>Holidays</span></a></li>
-                        <li><a class="ms-link" href="attendance-employees.html"> <span>Attendance Employees</span></a></li>
+                        <li><a class="ms-link active" href="attendance-employees.html"> <span>Attendance Employees</span></a></li>
                         <li><a class="ms-link" href="attendance.html"> <span>Attendance</span></a></li>
                         <li><a class="ms-link" href="leave-request.html"> <span>Leave Request</span></a></li>
                         <li><a class="ms-link" href="department.html"> <span>Department</span></a></li>
@@ -116,7 +118,7 @@
                         <li><a class="ms-link" href="chat.html"><span>Chat App</span></a></li>
                     </ul>
                 </li>
-                <li class="collapsed">
+                                <li class="collapsed">
                     <a class="m-link" data-bs-toggle="collapse" data-bs-target="#extra-Components" href="#">
                         <i class="icofont-code-alt"></i> <span>Other Pages</span> <span class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a>
                     <!-- Menu: Sub menu ul -->
@@ -124,18 +126,14 @@
                         <li><a class="ms-link" href="charts.html"> <span>Apex Charts</span></a></li>
                         <li><a class="ms-link" href="forms.html"><span>Forms Example</span></a></li>
                         <li><a class="ms-link" href="table.html"> <span>Table Example</span></a></li>
-                        <li><a class="ms-link" href="review.html"><span>Reviews Page</span></a></li>
-                         <li><a class="ms-link" href="icon.html"><span>Icons</span></a></li>
-                        <li><a class="ms-link" href="contact.html"><span>Contact</span></a></li>
-                        <li><a class="ms-link" href="widgets.html"><span>Widgets</span></a></li>
-                        <li><a class="ms-link" href="todo-list.html"><span>Todo-List</span></a></li>
+                        <li><a class="ms-link" href="icon.html"><span>Reviews Page</span></a></li><li><a class="ms-link" href="icon.html"><span></span>Icons</span></a></li>
                     </ul>
                 </li>
                 <li><a class="m-link" href="ui-elements/ui-alerts.html"><i class="icofont-paint"></i> <span>UI Components</span></a></li>
             </ul>
 
             
-            
+
             <!-- Menu: menu collepce btn -->
             <button type="button" class="btn btn-link sidebar-mini-btn text-light">
                 <span class="ms-2"><i class="icofont-bubble-right"></i></span>
@@ -144,7 +142,7 @@
     </div>
 
     <!-- main body area -->
-    <div class="main px-lg-4 px-md-4">
+    <div class="main px-lg-4 px-md-4"> 
 
         <!-- Body: Header -->
         <div class="header">
@@ -304,323 +302,419 @@
             </nav>
         </div>
 
-        <!-- Body: Body -->
-        <div class="body d-flex py-3">
+        <!-- Body: Body -->       
+        <div class="body d-flex py-lg-3 py-md-2">
             <div class="container-xxl">
-                <div class="row clearfix g-3">
-                    <div class="col-xl-8 col-lg-12 col-md-12 flex-column">
-                        <div class="row g-3">
-                            <div class="col-md-12">
-                                <div class="card">
-                                    <div class="card-header py-3 d-flex justify-content-between bg-transparent border-bottom-0">
-                                        <h6 class="mb-0 fw-bold ">Employees Info</h6>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="ac-line-transparent" id="apex-emplyoeeAnalytics"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="card">
-                                    <div class="card-header py-3 d-flex justify-content-between bg-transparent border-bottom-0">
-                                        <h6 class="mb-0 fw-bold ">Employees Availability</h6>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="row g-2 row-deck">
-                                            <div class="col-md-6 col-sm-6">
-                                                <div class="card">
-                                                    <div class="card-body ">
-                                                        <i class="icofont-checked fs-3"></i>
-                                                        <h6 class="mt-3 mb-0 fw-bold small-14">Attendance</h6>
-                                                        <span class="text-muted">400</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-sm-6">
-                                                <div class="card">
-                                                    <div class="card-body ">
-                                                            <i class="icofont-stopwatch fs-3"></i>
-                                                        <h6 class="mt-3 mb-0 fw-bold small-14">Late Coming</h6>
-                                                        <span class="text-muted">17</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-sm-6">
-                                                <div class="card">
-                                                    <div class="card-body ">
-                                                            <i class="icofont-ban fs-3"></i>
-                                                        <h6 class="mt-3 mb-0 fw-bold small-14">Absent</h6>
-                                                        <span class="text-muted">06</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-sm-6">
-                                                <div class="card">
-                                                    <div class="card-body ">
-                                                        <i class="icofont-beach-bed fs-3"></i>
-                                                        <h6 class="mt-3 mb-0 fw-bold small-14">Leave Apply</h6>
-                                                        <span class="text-muted">14</span> 
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="card">
-                                    <div class="card-header py-3 d-flex justify-content-between bg-transparent border-bottom-0">
-                                        <h6 class="mb-0 fw-bold ">Total Employees</h6>
-                                        <h4 class="mb-0 fw-bold ">423</h4>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="mt-3" id="apex-MainCategories"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="card">
-                                    <div class="card-header py-3 d-flex justify-content-between bg-transparent border-bottom-0">
-                                        <h6 class="mb-0 fw-bold ">Top Hiring Sources</h6>
-                                    </div>
-                                    <div class="card-body">
-                                        <div id="hiringsources"></div>
-                                    </div>
-                                </div>
-                            </div>
+                <div class="row align-items-center g-3 mb-3">
+                    <div class="border-0 mb-4">
+                        <div class="card-header py-3 no-bg bg-transparent d-flex align-items-center px-0 justify-content-between border-bottom flex-wrap">
+                            <h3 class="fw-bold mb-0">Employees View</h3>
                         </div>
                     </div>
-                    <div class="col-xl-4 col-lg-12 col-md-12">
-                        <div class="row g-3 row-deck">
-                            <div class="col-md-6 col-lg-6 col-xl-12">
-                                <div class="card bg-primary">
-                                    <div class="card-body row">
-                                        <div class="col">
-                                            <span class="avatar lg bg-white rounded-circle text-center d-flex align-items-center justify-content-center"><i class="icofont-file-text fs-5"></i></span>
-                                            <h1 class="mt-3 mb-0 fw-bold text-white">1546</h1>
-                                            <span class="text-white">Applications</span>
-                                        </div>
-                                        <div class="col">
-                                            <img class="img-fluid" src="assets/images/interview.svg" alt="interview">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-lg-6 col-xl-12  flex-column">
-                                <div class="card mb-3">
-                                    <div class="card-body">
-                                        <div class="d-flex align-items-center flex-fill">
-                                            <span class="avatar lg light-success-bg rounded-circle text-center d-flex align-items-center justify-content-center"><i class="icofont-users-alt-2 fs-5"></i></span>
-                                            <div class="d-flex flex-column ps-3  flex-fill">
-                                                <h6 class="fw-bold mb-0 fs-4">246</h6>
-                                                <span class="text-muted">Interviews</span>
-                                            </div>
-                                            <i class="icofont-chart-bar-graph fs-3 text-muted"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="d-flex align-items-center flex-fill">
-                                            <span class="avatar lg light-success-bg rounded-circle text-center d-flex align-items-center justify-content-center"><i class="icofont-holding-hands fs-5"></i></span>
-                                            <div class="d-flex flex-column ps-3 flex-fill">
-                                                <h6 class="fw-bold mb-0 fs-4">101</h6>
-                                                <span class="text-muted">Hired</span>
-                                            </div>
-                                            <i class="icofont-chart-line fs-3 text-muted"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-12 col-lg-12 col-xl-12">
-                                <div class="card">
-                                <div class="card-header py-3 d-flex justify-content-between bg-transparent border-bottom-0">
-                                    <h6 class="mb-0 fw-bold ">Upcomming Interviews</h6>
-                                </div>
-                                <div class="card-body">
-                                    <div class="flex-grow-1">
-                                        <div class="py-2 d-flex align-items-center border-bottom flex-wrap">
-                                            <div class="d-flex align-items-center flex-fill">
-                                                <img class="avatar lg rounded-circle img-thumbnail" src="assets/images/lg/avatar2.jpg" alt="profile">
-                                                <div class="d-flex flex-column ps-3">
-                                                    <h6 class="fw-bold mb-0 small-14">Natalie Gibson</h6>
-                                                    <span class="text-muted">Ui/UX Designer</span>
-                                                </div>
-                                            </div>
-                                            <div class="time-block text-truncate">
-                                                <i class="icofont-clock-time"></i> 1.30 - 1:30
-                                            </div>
-                                        </div>
-                                        <div class="py-2 d-flex align-items-center border-bottom flex-wrap">
-                                            <div class="d-flex align-items-center flex-fill">
-                                                <img class="avatar lg rounded-circle img-thumbnail" src="assets/images/lg/avatar9.jpg" alt="profile">
-                                                <div class="d-flex flex-column ps-3">
-                                                    <h6 class="fw-bold mb-0 small-14">Peter	Piperg</h6>
-                                                    <span class="text-muted">Web Design</span>
-                                                </div>
-                                            </div>
-                                            <div class="time-block text-truncate">
-                                                <i class="icofont-clock-time"></i> 9.00 - 1:30
-                                            </div>
-                                        </div>
-                                        <div class="py-2 d-flex align-items-center border-bottom flex-wrap">
-                                            <div class="d-flex align-items-center flex-fill">
-                                                <img class="avatar lg rounded-circle img-thumbnail" src="assets/images/lg/avatar12.jpg" alt="profile">
-                                                <div class="d-flex flex-column ps-3">
-                                                    <h6 class="fw-bold mb-0 small-14">Robert Young</h6>
-                                                    <span class="text-muted">PHP Developer</span>
-                                                </div>
-                                            </div>
-                                            <div class="time-block text-truncate">
-                                                <i class="icofont-clock-time"></i> 1.30 - 2:30
-                                            </div>
-                                        </div>
-                                        <div class="py-2 d-flex align-items-center border-bottom flex-wrap">
-                                            <div class="d-flex align-items-center flex-fill">
-                                                <img class="avatar lg rounded-circle img-thumbnail" src="assets/images/lg/avatar8.jpg" alt="profile">
-                                                <div class="d-flex flex-column ps-3">
-                                                    <h6 class="fw-bold mb-0 small-14">Victoria Vbell</h6>
-                                                    <span class="text-muted">IOS Developer</span>
-                                                </div>
-                                            </div>
-                                            <div class="time-block text-truncate">
-                                                <i class="icofont-clock-time"></i> 2.00 - 3:30
-                                            </div>
-                                        </div>
-                                        <div class="py-2 d-flex align-items-center border-bottom flex-wrap">
-                                            <div class="d-flex align-items-center flex-fill">
-                                                <img class="avatar lg rounded-circle img-thumbnail" src="assets/images/lg/avatar7.jpg" alt="profile">
-                                                <div class="d-flex flex-column ps-3">
-                                                    <h6 class="fw-bold mb-0 small-14">Mary Butler</h6>
-                                                    <span class="text-muted">Writer</span>
-                                                </div>
-                                            </div>
-                                            <div class="time-block text-truncate">
-                                                <i class="icofont-clock-time"></i> 4.00 - 4:30
-                                            </div>
-                                        </div>
-                                        <div class="py-2 d-flex align-items-center border-bottom flex-wrap">
-                                            <div class="d-flex align-items-center flex-fill">
-                                                <img class="avatar lg rounded-circle img-thumbnail" src="assets/images/lg/avatar3.jpg" alt="profile">
-                                                <div class="d-flex flex-column ps-3">
-                                                    <h6 class="fw-bold mb-0 small-14">Youn Bel</h6>
-                                                    <span class="text-muted">Unity 3d</span>
-                                                </div>
-                                            </div>
-                                            <div class="time-block text-truncate">
-                                                <i class="icofont-clock-time"></i> 7.00 - 8.00
-                                            </div>
-                                        </div>
-                                        <div class="py-2 d-flex align-items-center  flex-wrap">
-                                            <div class="d-flex align-items-center flex-fill">
-                                                <img class="avatar lg rounded-circle img-thumbnail" src="assets/images/lg/avatar2.jpg" alt="profile">
-                                                <div class="d-flex flex-column ps-3">
-                                                    <h6 class="fw-bold mb-0 small-14">Gibson Butler</h6>
-                                                    <span class="text-muted">Networking</span>
-                                                </div>
-                                            </div>
-                                            <div class="time-block text-truncate">
-                                                <i class="icofont-clock-time"></i> 8.00 - 9.00
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="card light-danger-bg">
-                            <div class="card-header py-3 d-flex justify-content-between bg-transparent border-bottom-0">
-                                <h6 class="mb-0 fw-bold ">Top Perfrormers</h6>
+                </div> <!-- Row end  -->
+                <div class="row align-item-center row-deck g-3 mb-3">
+                    <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-12">
+                        <div class="card">
+                            <div class="card-header py-3">
+                                <h6 class="mb-0 fw-bold ">Today Time Utilisation</h6>
                             </div>
                             <div class="card-body">
-                                <div class="row g-3 align-items-center">
-                                    <div class="col-md-12 col-lg-4 col-xl-4 col-xxl-2">
-                                        <p>You have 140 <span class="fw-bold">influencers </span> in your company.</p>
-                                        <div class="d-flex  justify-content-between text-center">
-                                            <div class="">
-                                                <h3 class="fw-bold">350</h3>
-                                                <span class="small">New Task</span>
+                                <div class="timesheet-info d-flex align-items-center justify-content-between flex-wrap">
+                                    <div class="intime d-flex align-items-center mt-2">
+                                        <i class="icofont-finger-print fs-4 color-light-success"></i>
+                                        <span class="fw-bold ms-1">Punching: 10:00 Am</span>
+                                    </div>
+                                    <div class="outtime mt-2 w-sm-100">
+                                        <button type="button" class="btn btn-dark w-sm-100"><i class="icofont-foot-print me-2"></i>Punch Out</button>
+                                    </div>
+                                </div>
+                                <div id="apex-circle-chart"></div>
+                                <div class="timesheet-info d-flex align-items-center justify-content-around flex-wrap">
+                                    <div class="intime d-flex align-items-center">
+                                        <i class="icofont-lunch fs-3 color-lavender-purple"></i>
+                                        <span class="fw-bold ms-1">Break: 1:10 Hr</span>
+                                    </div>
+                                    <div class="intime d-flex align-items-center">
+                                        <i class="icofont-ui-timer fs-4 color-light-success"></i>
+                                        <span class="fw-bold ms-1">Overtime: 02:10 Hr</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- .card: My Timeline -->
+                    </div>
+                    <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-12">
+                        <div class="card">
+                            <div class="card-header d-flex justify-content-between align-items-center bg-transparent border-bottom-0">
+                                <h6 class="m-0 fw-bold">Employess Yearly Status</h6>
+                            </div>
+                            <div class="card-body">
+                                <div id="apex-chart-line-column"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- Row end  -->
+                <div class="row clearfix g-3 mb-3">
+                    <div class="col-lg-12 col-md-12 flex-column">
+                        <div class="row g-3 row-deck">
+                            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12">
+                                <div class="card">
+                                    <div class="card-header py-3">
+                                        <h6 class="mb-0 fw-bold ">Statistics</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="progress-count mb-5">
+                                            <div class="d-flex justify-content-between align-items-center mb-1">
+                                                <h6 class="mb-0 fw-bold d-flex align-items-center">Today</h6>
+                                                <span class="small text-muted">02/08</span>
                                             </div>
-                                            <div class="">
-                                                <h3 class="fw-bold">130</h3>
-                                                <span class="small">Task Completed</span>
+                                            <div class="progress" style="height: 10px;">
+                                                <div class="progress-bar light-info-bg" role="progressbar" style="width: 92%" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100"></div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-12 col-lg-12 col-xl-12 col-xxl-10">
-                                        <div class="row g-3 row-cols-2 row-cols-sm-3 row-cols-md-3 row-cols-lg-3 row-cols-xl-3 row-cols-xxl-6 row-deck top-perfomer">
-                                            <div class="col">
-                                                <div class="card shadow">
-                                                    <div class="card-body text-center d-flex flex-column justify-content-center">
-                                                        <img class="avatar lg rounded-circle img-thumbnail mx-auto" src="assets/images/lg/avatar2.jpg" alt="profile">
-                                                        <h6 class="fw-bold my-2 small-14">Luke Short</h6>
-                                                        <span class="text-muted mb-2">@Short</span>
-                                                        <h4 class="fw-bold text-primary fs-3">80%</h4>
-                                                    </div>
-                                                </div>
+                                        <div class="progress-count mb-5">
+                                            <div class="d-flex justify-content-between align-items-center mb-1">
+                                                <h6 class="mb-0 fw-bold d-flex align-items-center">This Week</h6>
+                                                <span class="small text-muted">01/40</span>
                                             </div>
-                                            <div class="col">
-                                                <div class="card shadow">
-                                                    <div class="card-body text-center d-flex flex-column justify-content-center">
-                                                        <img class="avatar lg rounded-circle img-thumbnail mx-auto" src="assets/images/lg/avatar5.jpg" alt="profile">
-                                                        <h6 class="fw-bold my-2 small-14">John Hard</h6>
-                                                        <span class="text-muted mb-2">@rdacre</span>
-                                                        <h4 class="fw-bold text-primary fs-3">70%</h4>
-                                                    </div>
-                                                </div>
+                                            <div class="progress" style="height: 10px;">
+                                                <div class="progress-bar bg-lightgreen" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
                                             </div>
-                                            <div class="col">
-                                                <div class="card shadow">
-                                                    <div class="card-body text-center d-flex flex-column justify-content-center">
-                                                        <img class="avatar lg rounded-circle img-thumbnail mx-auto" src="assets/images/lg/avatar8.jpg" alt="profile">
-                                                        <h6 class="fw-bold my-2 small-14">Paul Rees</h6>
-                                                        <span class="text-muted mb-2">@Rees</span>
-                                                        <h4 class="fw-bold text-primary fs-3">77%</h4>
-                                                    </div>
-                                                </div>
+                                        </div>
+                                        <div class="progress-count mb-5">
+                                            <div class="d-flex justify-content-between align-items-center mb-1">
+                                                <h6 class="mb-0 fw-bold d-flex align-items-center">This Month</h6>
+                                                <span class="small text-muted">02/160</span>
                                             </div>
-                                            <div class="col">
-                                                <div class="card shadow">
-                                                    <div class="card-body text-center d-flex flex-column justify-content-center">
-                                                        <img class="avatar lg rounded-circle img-thumbnail mx-auto" src="assets/images/lg/avatar9.jpg" alt="profile">
-                                                        <h6 class="fw-bold my-2 small-14">Rachel Parr</h6>
-                                                        <span class="text-muted mb-2">@Parr</span>
-                                                        <h4 class="fw-bold text-primary fs-3">85%</h4>
-                                                    </div>
-                                                </div>
+                                            <div class="progress" style="height: 10px;">
+                                                <div class="progress-bar light-success-bg" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
                                             </div>
-                                            <div class="col">
-                                                <div class="card shadow">
-                                                    <div class="card-body text-center d-flex flex-column justify-content-center">
-                                                        <img class="avatar lg rounded-circle img-thumbnail mx-auto" src="assets/images/lg/avatar12.jpg" alt="profile">
-                                                        <h6 class="fw-bold my-2 small-14">Eric Reid</h6>
-                                                        <span class="text-muted mb-2">@Eric</span>
-                                                        <h4 class="fw-bold text-primary fs-3">95%</h4>
-                                                    </div>
-                                                </div>
+                                        </div>
+                                        <div class="progress-count mb-5">
+                                            <div class="d-flex justify-content-between align-items-center mb-1">
+                                                <h6 class="mb-0 fw-bold d-flex align-items-center">Overtime</h6>
+                                                <span class="small text-muted">15:30 Hr</span>
                                             </div>
-                                            <div class="col">
-                                                <div class="card shadow">
-                                                    <div class="card-body text-center d-flex flex-column justify-content-center">
-                                                        <img class="avatar lg rounded-circle img-thumbnail mx-auto" src="assets/images/lg/avatar3.jpg" alt="profile">
-                                                        <h6 class="fw-bold my-2 small-14">Jan Ince</h6>
-                                                        <span class="text-muted mb-2">@Ince</span>
-                                                        <h4 class="fw-bold text-primary fs-3">97%</h4>
-                                                    </div>
-                                                </div>
+                                            <div class="progress" style="height: 10px;">
+                                                <div class="progress-bar light-orange-bg" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                        <div class="progress-count mb-5">
+                                            <div class="d-flex justify-content-between align-items-center mb-1">
+                                                <h6 class="mb-0 fw-bold d-flex align-items-center">Remaining</h6>
+                                                <span class="small text-muted">01/08</span>
+                                            </div>
+                                            <div class="progress" style="height: 10px;">
+                                                <div class="progress-bar bg-lightyellow" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12">
+                                <div class="card">
+                                    <div class="card-header py-3">
+                                        <h6 class="mb-0 fw-bold ">Recent Activity</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="timeline-item ti-danger border-bottom ms-2">
+                                            <div class="d-flex">
+                                                <span class="avatar d-flex justify-content-center align-items-center rounded-circle light-success-bg">PH</span>
+                                                <div class="flex-fill ms-3">
+                                                    <div class="mb-1"><strong>Punch In at</strong></div>
+                                                    <span class="d-flex text-muted align-items-center"><i class="icofont-ui-clock me-1"></i> 10 Am</span>
+                                                </div>
+                                            </div>
+                                        </div> <!-- timeline item end  -->
+                                        <div class="timeline-item ti-info border-bottom ms-2">
+                                            <div class="d-flex">
+                                                <span class="avatar d-flex justify-content-center align-items-center rounded-circle bg-careys-pink">PO</span>
+                                                <div class="flex-fill ms-3">
+                                                    <div class="mb-1"><strong>Punch Out at</strong></div>
+                                                    <span class="d-flex text-muted align-items-center"><i class="icofont-ui-clock me-1"></i> 11:30 Am</span>
+                                                </div>
+                                            </div>
+                                        </div> <!-- timeline item end  -->
+                                        <div class="timeline-item ti-info border-bottom ms-2">
+                                            <div class="d-flex">
+                                                <span class="avatar d-flex justify-content-center align-items-center rounded-circle bg-warning">BR</span>
+                                                <div class="flex-fill ms-3">
+                                                    <div class="mb-1"><strong>Break Time</strong></div>
+                                                    <span class="d-flex text-muted align-items-center"><i class="icofont-ui-clock me-1"></i> 1 Pm to 2 Pm</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-item ti-success  border-bottom ms-2">
+                                            <div class="d-flex">
+                                                <span class="avatar d-flex justify-content-center align-items-center rounded-circle light-success-bg">PO</span>
+                                                <div class="flex-fill ms-3">
+                                                    <div class="mb-1"><strong>Punch IN at</strong></div>
+                                                    <span class="d-flex text-muted align-items-center"><i class="icofont-ui-clock me-1"></i> 2:10 Pm</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-item ti-info ms-2">
+                                            <div class="d-flex">
+                                                <span class="avatar d-flex justify-content-center align-items-center rounded-circle bg-careys-pink">PO</span>
+                                                <div class="flex-fill ms-3">
+                                                    <div class="mb-1"><strong>Punch Out at</strong></div>
+                                                    <span class="d-flex text-muted align-items-center"><i class="icofont-ui-clock me-1"></i> 7:30 Pm</span>
+                                                </div>
+                                            </div>
+                                        </div> <!-- timeline item end  -->
+                                    </div>
+                                </div> <!-- .card: My Timeline -->
+                            </div>
                         </div>
                     </div>
-                </div><!-- Row End -->
+                </div> <!-- Row end  --> 
+                <div class="row clearfix g-3">
+                    <div class="col-sm-12">
+                          <div class="card">
+                              <div class="card-body">
+                                  <table id="myProjectTable" class="table table-hover align-middle mb-0 text-center" style="width:100%">
+                                      <thead>
+                                          <tr>
+                                              <th>#</th>
+                                              <th>Date</th>
+                                              <th>Puchin Time</th>
+                                              <th>Puchout Time</th>
+                                              <th>Break Time</th>
+                                              <th>Half Day</th>
+                                              <th>Full Day</th>
+                                              <th>Overtime</th>
+                                              <th>Total Production</th>
+                                          </tr>
+                                      </thead>
+                                      <tbody>
+                                            <tr>
+                                                <td>01</td>
+                                                <td>June 26, 2021</td>
+                                                <td class="text-success">10:05 AM</td>
+                                                <td class="text-danger">09:05 PM</td>
+                                                <td class="text-danger">01:12 Hr</td>
+                                                <td><i class="icofont-close-circled text-danger"></i></td>
+                                                <td><i class="icofont-check-circled text-success"></i></td>
+                                                <td class="text-success">01:39 Hr</td>
+                                                <td class="text-success fw-bold">09:39 Hr</td>
+                                            </tr>
+                                            <tr>
+                                                <td>02</td>
+                                                <td>June 25, 2021</td>
+                                                <td class="text-success">10:05 AM</td>
+                                                <td class="text-danger">09:05 PM</td>
+                                                <td class="text-danger">01:12 Hr</td>
+                                                <td><i class="icofont-close-circled text-danger"></i></td>
+                                                <td><i class="icofont-check-circled text-success"></i></td>
+                                                <td class="text-success">01:39 Hr</td>
+                                                <td class="text-success fw-bold">09:39 Hr</td>
+                                            </tr>
+                                            <tr>
+                                                <td>03</td>
+                                                <td>June 24, 2021</td>
+                                                <td class="text-success">10:00 AM</td>
+                                                <td class="text-danger">02:00 PM</td>
+                                                <td class="text-danger">00:00 </td>
+                                                <td><i class="icofont-check-circled text-success"></i></td>
+                                                <td><i class="icofont-close-circled text-danger"></i></td>
+                                                <td class="text-success">00:00</td>
+                                                <td class="text-success fw-bold">04:00 Hr</td>
+                                            </tr>
+                                            <tr>
+                                                <td>04</td>
+                                                <td>June 23, 2021</td>
+                                                <td class="text-success">10:05 AM</td>
+                                                <td class="text-danger">03:05 PM</td>
+                                                <td class="text-danger">00:00 </td>
+                                                <td><i class="icofont-check-circled text-success"></i></td>
+                                                <td><i class="icofont-close-circled text-danger"></i></td>
+                                                <td class="text-success">00:00</td>
+                                                <td class="text-success fw-bold">05:00 Hr</td>
+                                            </tr>
+                                            <tr>
+                                                <td>05</td>
+                                                <td>June 22, 2021</td>
+                                                <td class="text-success">10:05 AM</td>
+                                                <td class="text-danger">09:05 PM</td>
+                                                <td class="text-danger">01:12 Hr</td>
+                                                <td><i class="icofont-close-circled text-danger"></i></td>
+                                                <td><i class="icofont-check-circled text-success"></i></td>
+                                                <td class="text-success">01:39 Hr</td>
+                                                <td class="text-success fw-bold">09:39 Hr</td>
+                                            </tr>
+                                            <tr>
+                                                <td>06</td>
+                                                <td>June 21, 2021</td>
+                                                <td class="text-success">10:15 AM</td>
+                                                <td class="text-danger">02:15 PM</td>
+                                                <td class="text-danger">00:00 </td>
+                                                <td><i class="icofont-check-circled text-success"></i></td>
+                                                <td><i class="icofont-close-circled text-danger"></i></td>
+                                                <td class="text-success">00:00</td>
+                                                <td class="text-success fw-bold">04:00 Hr</td>
+                                            </tr>
+                                            <tr>
+                                                <td>07</td>
+                                                <td>June 18, 2021</td>
+                                                <td class="text-success">10:05 AM</td>
+                                                <td class="text-danger">09:05 PM</td>
+                                                <td class="text-danger">01:12 Hr</td>
+                                                <td><i class="icofont-close-circled text-danger"></i></td>
+                                                <td><i class="icofont-check-circled text-success"></i></td>
+                                                <td class="text-success">01:39 Hr</td>
+                                                <td class="text-success fw-bold">09:39 Hr</td>
+                                            </tr>
+                                            <tr>
+                                                <td>08</td>
+                                                <td>June 17, 2021</td>
+                                                <td class="text-success">10:05 AM</td>
+                                                <td class="text-danger">09:05 PM</td>
+                                                <td class="text-danger">01:12 Hr</td>
+                                                <td><i class="icofont-close-circled text-danger"></i></td>
+                                                <td><i class="icofont-check-circled text-success"></i></td>
+                                                <td class="text-success">01:39 Hr</td>
+                                                <td class="text-success fw-bold">09:39 Hr</td>
+                                            </tr>
+                                            <tr>
+                                                <td>09</td>
+                                                <td>June 16, 2021</td>
+                                                <td class="text-success">10:05 AM</td>
+                                                <td class="text-danger">09:05 PM</td>
+                                                <td class="text-danger">01:12 Hr</td>
+                                                <td><i class="icofont-close-circled text-danger"></i></td>
+                                                <td><i class="icofont-check-circled text-success"></i></td>
+                                                <td class="text-success">01:39 Hr</td>
+                                                <td class="text-success fw-bold">09:39 Hr</td>
+                                            </tr>
+                                            <tr>
+                                                <td>10</td>
+                                                <td>June 15, 2021</td>
+                                                <td class="text-success">00:00</td>
+                                                <td class="text-danger">00:00</td>
+                                                <td class="text-danger">00:00</td>
+                                                <td><i class="icofont-close-circled text-danger"></i></td>
+                                                <td><i class="icofont-close-circled text-danger"></i></td>
+                                                <td class="text-success">00:00</td>
+                                                <td class="text-success fw-bold">00:00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>11</td>
+                                                <td>June 14, 2021</td>
+                                                <td class="text-success">10:05 AM</td>
+                                                <td class="text-danger">09:05 PM</td>
+                                                <td class="text-danger">01:12 Hr</td>
+                                                <td><i class="icofont-close-circled text-danger"></i></td>
+                                                <td><i class="icofont-check-circled text-success"></i></td>
+                                                <td class="text-success">01:39 Hr</td>
+                                                <td class="text-success fw-bold">09:39 Hr</td>
+                                            </tr>
+                                            <tr>
+                                                <td>12</td>
+                                                <td>June 11, 2021</td>
+                                                <td class="text-success">10:05 AM</td>
+                                                <td class="text-danger">09:05 PM</td>
+                                                <td class="text-danger">01:12 Hr</td>
+                                                <td><i class="icofont-close-circled text-danger"></i></td>
+                                                <td><i class="icofont-check-circled text-success"></i></td>
+                                                <td class="text-success">01:39 Hr</td>
+                                                <td class="text-success fw-bold">09:39 Hr</td>
+                                            </tr>
+                                            <tr>
+                                                <td>13</td>
+                                                <td>June 10, 2021</td>
+                                                <td class="text-success">10:05 AM</td>
+                                                <td class="text-danger">09:05 PM</td>
+                                                <td class="text-danger">01:12 Hr</td>
+                                                <td><i class="icofont-close-circled text-danger"></i></td>
+                                                <td><i class="icofont-check-circled text-success"></i></td>
+                                                <td class="text-success">01:39 Hr</td>
+                                                <td class="text-success fw-bold">09:39 Hr</td>
+                                            </tr>
+                                            <tr>
+                                                <td>14</td>
+                                                <td>June 09, 2021</td>
+                                                <td class="text-success">10:05 AM</td>
+                                                <td class="text-danger">09:05 PM</td>
+                                                <td class="text-danger">01:12 Hr</td>
+                                                <td><i class="icofont-close-circled text-danger"></i></td>
+                                                <td><i class="icofont-check-circled text-success"></i></td>
+                                                <td class="text-success">01:39 Hr</td>
+                                                <td class="text-success fw-bold">09:39 Hr</td>
+                                            </tr>
+                                            <tr>
+                                                <td>15</td>
+                                                <td>June 08, 2021</td>
+                                                <td class="text-success">10:05 AM</td>
+                                                <td class="text-danger">09:05 PM</td>
+                                                <td class="text-danger">01:12 Hr</td>
+                                                <td><i class="icofont-close-circled text-danger"></i></td>
+                                                <td><i class="icofont-check-circled text-success"></i></td>
+                                                <td class="text-success">01:39 Hr</td>
+                                                <td class="text-success fw-bold">09:39 Hr</td>
+                                            </tr>
+                                            <tr>
+                                                <td>16</td>
+                                                <td>June 07, 2021</td>
+                                                <td class="text-success">10:05 AM</td>
+                                                <td class="text-danger">09:05 PM</td>
+                                                <td class="text-danger">01:12 Hr</td>
+                                                <td><i class="icofont-close-circled text-danger"></i></td>
+                                                <td><i class="icofont-check-circled text-success"></i></td>
+                                                <td class="text-success">01:39 Hr</td>
+                                                <td class="text-success fw-bold">09:39 Hr</td>
+                                            </tr>
+                                            <tr>
+                                                <td>17</td>
+                                                <td>June 04, 2021</td>
+                                                <td class="text-success">10:05 AM</td>
+                                                <td class="text-danger">09:05 PM</td>
+                                                <td class="text-danger">01:12 Hr</td>
+                                                <td><i class="icofont-close-circled text-danger"></i></td>
+                                                <td><i class="icofont-check-circled text-success"></i></td>
+                                                <td class="text-success">01:39 Hr</td>
+                                                <td class="text-success fw-bold">09:39 Hr</td>
+                                            </tr>
+                                            <tr>
+                                                <td>18</td>
+                                                <td>June 03, 2021</td>
+                                                <td class="text-success">10:05 AM</td>
+                                                <td class="text-danger">09:05 PM</td>
+                                                <td class="text-danger">01:12 Hr</td>
+                                                <td><i class="icofont-close-circled text-danger"></i></td>
+                                                <td><i class="icofont-check-circled text-success"></i></td>
+                                                <td class="text-success">01:39 Hr</td>
+                                                <td class="text-success fw-bold">09:39 Hr</td>
+                                            </tr>
+                                            <tr>
+                                                <td>19</td>
+                                                <td>June 02, 2021</td>
+                                                <td class="text-success">10:05 AM</td>
+                                                <td class="text-danger">09:05 PM</td>
+                                                <td class="text-danger">01:12 Hr</td>
+                                                <td><i class="icofont-close-circled text-danger"></i></td>
+                                                <td><i class="icofont-check-circled text-success"></i></td>
+                                                <td class="text-success">01:39 Hr</td>
+                                                <td class="text-success fw-bold">09:39 Hr</td>
+                                            </tr>
+                                            <tr>
+                                                <td>20</td>
+                                                <td>June 01, 2021</td>
+                                                <td class="text-success">10:05 AM</td>
+                                                <td class="text-danger">09:05 PM</td>
+                                                <td class="text-danger">01:12 Hr</td>
+                                                <td><i class="icofont-close-circled text-danger"></i></td>
+                                                <td><i class="icofont-check-circled text-success"></i></td>
+                                                <td class="text-success">01:39 Hr</td>
+                                                <td class="text-success fw-bold">09:39 Hr</td>
+                                            </tr>
+                                      </tbody>
+                                  </table>
+                              </div>
+                          </div>
+                    </div>
+                  </div><!-- Row End -->
             </div>
-        </div> 
-
+        </div>
+        
         <!-- Modal Members-->
         <div class="modal fade" id="addUser" tabindex="-1" aria-labelledby="addUserLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -755,7 +849,8 @@
                 </div>
             </div>
             </div>
-        </div> 
+        </div>
+
     </div>
 
     <!-- start: template setting, and more. -->
@@ -807,19 +902,105 @@
 			</div>
 		</div>
 	</div>
-
 </div>
-
-<!-- Jquery Core Js -->
+ 
+<!-- Jquery Core Js -->  
 <script src="assets/bundles/libscripts.bundle.js"></script>
 
-<!-- Plugin Js-->
+<!-- Plugin Js -->
 <script src="assets/bundles/apexcharts.bundle.js"></script>
+<script src="assets/bundles/dataTables.bundle.js"></script>
 
 <!-- Jquery Page Js -->
 <script src="../js/template.js"></script>
-<script src="../js/page/hr.js"></script>
+<script>
+    // project data table
+    $(document).ready(function() {
+        $('#myProjectTable')
+        .addClass( 'nowrap' )
+        .dataTable( {
+            responsive: true,
+            columnDefs: [
+                { targets: [-1, -3], className: 'dt-body-right' }
+            ]
+        });
+    });
+    // employees Line Column
+    $(document).ready(function() {
+        var options = {
+            chart: {
+                height: 350,
+                type: 'line',
+                toolbar: {
+                    show: false,
+                },
+            },
+            colors: ['var(--chart-color1)', 'var(--chart-color2)'],
+            series: [{
+                name: 'Working Hours',
+                type: 'column',
+                data: [440, 505, 414, 671, 227, 413, 201, 352, 752, 320, 257, 160]
+            }, {
+                name: 'Employees Progress',
+                type: 'line',
+                data: [23, 42, 35, 27, 43, 22, 17, 31, 22, 22, 12, 16]
+            }],
+            stroke: {
+                width: [0, 4]
+            },        
+             //labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],    
+            labels: ['2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012'],
+            xaxis: {
+                type: 'datetime'
+            },
+            yaxis: [{
+                title: {
+                    text: 'Working Hours',
+                },
+
+            }, {
+                opposite: true,
+                title: {
+                    text: 'Employees Progress'
+                }
+            }]
+        }
+        var chart = new ApexCharts(
+            document.querySelector("#apex-chart-line-column"),
+            options
+        );
+
+        chart.render();
+    });
+
+    // employees circle
+    $(document).ready(function() {
+        var options = {
+            chart: {
+                height: 250,
+                type: 'radialBar',
+            },
+            colors: ['var(--chart-color1)'],
+            plotOptions: {
+                radialBar: {
+                    hollow: {
+                        size: '70%',
+                    }
+                },
+            },
+            series: [70],
+            labels: ['Working'],
+        }
+        var chart = new ApexCharts(
+            document.querySelector("#apex-circle-chart"),
+            options
+        );
+
+        chart.render();
+    });
+
+</script>
 </body>
 
-<!-- Mirrored from pixelwibes.com/template/my-task/html/dist/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 27 Jul 2024 11:49:02 GMT -->
-</html> 
+<!-- Mirrored from pixelwibes.com/template/my-task/html/dist/attendance-employees.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 27 Jul 2024 11:51:15 GMT -->
+</html>

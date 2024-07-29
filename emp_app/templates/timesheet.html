@@ -2,20 +2,23 @@
 <html class="no-js" lang="en" dir="ltr">
 
 
-<!-- Mirrored from pixelwibes.com/template/my-task/html/dist/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 27 Jul 2024 11:48:24 GMT -->
+<!-- Mirrored from pixelwibes.com/template/my-task/html/dist/timesheet.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 27 Jul 2024 11:50:58 GMT -->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>:: My-Task:: Employee Dashboard </title>
+    <title>:: My-Task:: Timesheet</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Favicon-->
+    <!-- plugin css file  -->
+    <link rel="stylesheet" href="assets/plugin/datatables/responsive.dataTables.min.css">
+    <link rel="stylesheet" href="assets/plugin/datatables/dataTables.bootstrap5.min.css">
     <!-- project css file  -->
     <link rel="stylesheet" href="assets/css/my-task.style.min.css">
 </head>
-
 <body  data-mytask="theme-indigo">
+
 <div id="mytask-layout">
-    
+
     <!-- sidebar -->
     <div class="sidebar px-4 py-4 py-md-5 me-0">
         <div class="d-flex flex-column h-100">
@@ -30,25 +33,24 @@
                 <span class="logo-text">My-Task</span>
             </a>
             <!-- Menu: main ul -->
-
             <ul class="menu-list flex-grow-1 mt-3">
                 <li class="collapsed">
-                    <a class="m-link active" data-bs-toggle="collapse" data-bs-target="#dashboard-Components" href="#">
+                    <a class="m-link" data-bs-toggle="collapse" data-bs-target="#dashboard-Components" href="#">
                         <i class="icofont-home fs-5"></i> <span>Dashboard</span> <span class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a>
                     <!-- Menu: Sub menu ul -->
-                    <ul class="sub-menu collapse show" id="dashboard-Components">
-                        <li><a class="ms-link active" href="index-2.html"> <span>Hr Dashboard</span></a></li>
+                    <ul class="sub-menu collapse" id="dashboard-Components">
+                        <li><a class="ms-link" href="index-2.html"> <span>Hr Dashboard</span></a></li>
                         <li><a class="ms-link" href="project-dashboard.html"> <span>Project Dashboard</span></a></li>
                     </ul>
                 </li>
                 <li  class="collapsed">
-                    <a class="m-link"  data-bs-toggle="collapse" data-bs-target="#project-Components" href="#">
+                    <a class="m-link active"  data-bs-toggle="collapse" data-bs-target="#project-Components" href="#">
                         <i class="icofont-briefcase"></i><span>Projects</span> <span class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a>
                     <!-- Menu: Sub menu ul -->
-                    <ul class="sub-menu collapse" id="project-Components">
+                    <ul class="sub-menu collapse show" id="project-Components">
                         <li><a class="ms-link" href="projects.html"><span>Projects</span></a></li>
                         <li><a class="ms-link" href="task.html"><span>Tasks</span></a></li>
-                        <li><a class="ms-link" href="timesheet.html"><span>Timesheet</span></a></li>
+                        <li><a class="ms-link active" href="timesheet.html"><span>Timesheet</span></a></li>
                         <li><a class="ms-link" href="team-leader.html"><span>Leaders</span></a></li>
                     </ul>
                 </li>
@@ -116,7 +118,7 @@
                         <li><a class="ms-link" href="chat.html"><span>Chat App</span></a></li>
                     </ul>
                 </li>
-                <li class="collapsed">
+                                <li class="collapsed">
                     <a class="m-link" data-bs-toggle="collapse" data-bs-target="#extra-Components" href="#">
                         <i class="icofont-code-alt"></i> <span>Other Pages</span> <span class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a>
                     <!-- Menu: Sub menu ul -->
@@ -134,7 +136,6 @@
                 <li><a class="m-link" href="ui-elements/ui-alerts.html"><i class="icofont-paint"></i> <span>UI Components</span></a></li>
             </ul>
 
-            
             
             <!-- Menu: menu collepce btn -->
             <button type="button" class="btn btn-link sidebar-mini-btn text-light">
@@ -305,322 +306,399 @@
         </div>
 
         <!-- Body: Body -->
-        <div class="body d-flex py-3">
+        <div class="body d-flex py-lg-3 py-md-2">
             <div class="container-xxl">
+                <div class="row align-items-center">
+                    <div class="border-0 mb-4">
+                        <div class="card-header py-3 no-bg bg-transparent d-flex align-items-center px-0 justify-content-between border-bottom flex-wrap">
+                            <h3 class="fw-bold mb-0">Project Timesheet</h3>
+                            <div class="col-auto d-flex w-sm-100">
+                                <button type="button" class="btn btn-dark btn-set-task w-sm-100" data-bs-toggle="modal" data-bs-target="#sendsheet"><i class="icofont-file-spreadsheet me-2 fs-6"></i>Sheets Sent</button>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- Row end  -->
                 <div class="row clearfix g-3">
-                    <div class="col-xl-8 col-lg-12 col-md-12 flex-column">
-                        <div class="row g-3">
-                            <div class="col-md-12">
-                                <div class="card">
-                                    <div class="card-header py-3 d-flex justify-content-between bg-transparent border-bottom-0">
-                                        <h6 class="mb-0 fw-bold ">Employees Info</h6>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="ac-line-transparent" id="apex-emplyoeeAnalytics"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="card">
-                                    <div class="card-header py-3 d-flex justify-content-between bg-transparent border-bottom-0">
-                                        <h6 class="mb-0 fw-bold ">Employees Availability</h6>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="row g-2 row-deck">
-                                            <div class="col-md-6 col-sm-6">
-                                                <div class="card">
-                                                    <div class="card-body ">
-                                                        <i class="icofont-checked fs-3"></i>
-                                                        <h6 class="mt-3 mb-0 fw-bold small-14">Attendance</h6>
-                                                        <span class="text-muted">400</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-sm-6">
-                                                <div class="card">
-                                                    <div class="card-body ">
-                                                            <i class="icofont-stopwatch fs-3"></i>
-                                                        <h6 class="mt-3 mb-0 fw-bold small-14">Late Coming</h6>
-                                                        <span class="text-muted">17</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-sm-6">
-                                                <div class="card">
-                                                    <div class="card-body ">
-                                                            <i class="icofont-ban fs-3"></i>
-                                                        <h6 class="mt-3 mb-0 fw-bold small-14">Absent</h6>
-                                                        <span class="text-muted">06</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-sm-6">
-                                                <div class="card">
-                                                    <div class="card-body ">
-                                                        <i class="icofont-beach-bed fs-3"></i>
-                                                        <h6 class="mt-3 mb-0 fw-bold small-14">Leave Apply</h6>
-                                                        <span class="text-muted">14</span> 
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="card">
-                                    <div class="card-header py-3 d-flex justify-content-between bg-transparent border-bottom-0">
-                                        <h6 class="mb-0 fw-bold ">Total Employees</h6>
-                                        <h4 class="mb-0 fw-bold ">423</h4>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="mt-3" id="apex-MainCategories"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="card">
-                                    <div class="card-header py-3 d-flex justify-content-between bg-transparent border-bottom-0">
-                                        <h6 class="mb-0 fw-bold ">Top Hiring Sources</h6>
-                                    </div>
-                                    <div class="card-body">
-                                        <div id="hiringsources"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-12 col-md-12">
-                        <div class="row g-3 row-deck">
-                            <div class="col-md-6 col-lg-6 col-xl-12">
-                                <div class="card bg-primary">
-                                    <div class="card-body row">
-                                        <div class="col">
-                                            <span class="avatar lg bg-white rounded-circle text-center d-flex align-items-center justify-content-center"><i class="icofont-file-text fs-5"></i></span>
-                                            <h1 class="mt-3 mb-0 fw-bold text-white">1546</h1>
-                                            <span class="text-white">Applications</span>
-                                        </div>
-                                        <div class="col">
-                                            <img class="img-fluid" src="assets/images/interview.svg" alt="interview">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-lg-6 col-xl-12  flex-column">
-                                <div class="card mb-3">
-                                    <div class="card-body">
-                                        <div class="d-flex align-items-center flex-fill">
-                                            <span class="avatar lg light-success-bg rounded-circle text-center d-flex align-items-center justify-content-center"><i class="icofont-users-alt-2 fs-5"></i></span>
-                                            <div class="d-flex flex-column ps-3  flex-fill">
-                                                <h6 class="fw-bold mb-0 fs-4">246</h6>
-                                                <span class="text-muted">Interviews</span>
-                                            </div>
-                                            <i class="icofont-chart-bar-graph fs-3 text-muted"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="d-flex align-items-center flex-fill">
-                                            <span class="avatar lg light-success-bg rounded-circle text-center d-flex align-items-center justify-content-center"><i class="icofont-holding-hands fs-5"></i></span>
-                                            <div class="d-flex flex-column ps-3 flex-fill">
-                                                <h6 class="fw-bold mb-0 fs-4">101</h6>
-                                                <span class="text-muted">Hired</span>
-                                            </div>
-                                            <i class="icofont-chart-line fs-3 text-muted"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-12 col-lg-12 col-xl-12">
-                                <div class="card">
-                                <div class="card-header py-3 d-flex justify-content-between bg-transparent border-bottom-0">
-                                    <h6 class="mb-0 fw-bold ">Upcomming Interviews</h6>
-                                </div>
-                                <div class="card-body">
-                                    <div class="flex-grow-1">
-                                        <div class="py-2 d-flex align-items-center border-bottom flex-wrap">
-                                            <div class="d-flex align-items-center flex-fill">
-                                                <img class="avatar lg rounded-circle img-thumbnail" src="assets/images/lg/avatar2.jpg" alt="profile">
-                                                <div class="d-flex flex-column ps-3">
-                                                    <h6 class="fw-bold mb-0 small-14">Natalie Gibson</h6>
-                                                    <span class="text-muted">Ui/UX Designer</span>
-                                                </div>
-                                            </div>
-                                            <div class="time-block text-truncate">
-                                                <i class="icofont-clock-time"></i> 1.30 - 1:30
-                                            </div>
-                                        </div>
-                                        <div class="py-2 d-flex align-items-center border-bottom flex-wrap">
-                                            <div class="d-flex align-items-center flex-fill">
-                                                <img class="avatar lg rounded-circle img-thumbnail" src="assets/images/lg/avatar9.jpg" alt="profile">
-                                                <div class="d-flex flex-column ps-3">
-                                                    <h6 class="fw-bold mb-0 small-14">Peter	Piperg</h6>
-                                                    <span class="text-muted">Web Design</span>
-                                                </div>
-                                            </div>
-                                            <div class="time-block text-truncate">
-                                                <i class="icofont-clock-time"></i> 9.00 - 1:30
-                                            </div>
-                                        </div>
-                                        <div class="py-2 d-flex align-items-center border-bottom flex-wrap">
-                                            <div class="d-flex align-items-center flex-fill">
-                                                <img class="avatar lg rounded-circle img-thumbnail" src="assets/images/lg/avatar12.jpg" alt="profile">
-                                                <div class="d-flex flex-column ps-3">
-                                                    <h6 class="fw-bold mb-0 small-14">Robert Young</h6>
-                                                    <span class="text-muted">PHP Developer</span>
-                                                </div>
-                                            </div>
-                                            <div class="time-block text-truncate">
-                                                <i class="icofont-clock-time"></i> 1.30 - 2:30
-                                            </div>
-                                        </div>
-                                        <div class="py-2 d-flex align-items-center border-bottom flex-wrap">
-                                            <div class="d-flex align-items-center flex-fill">
-                                                <img class="avatar lg rounded-circle img-thumbnail" src="assets/images/lg/avatar8.jpg" alt="profile">
-                                                <div class="d-flex flex-column ps-3">
-                                                    <h6 class="fw-bold mb-0 small-14">Victoria Vbell</h6>
-                                                    <span class="text-muted">IOS Developer</span>
-                                                </div>
-                                            </div>
-                                            <div class="time-block text-truncate">
-                                                <i class="icofont-clock-time"></i> 2.00 - 3:30
-                                            </div>
-                                        </div>
-                                        <div class="py-2 d-flex align-items-center border-bottom flex-wrap">
-                                            <div class="d-flex align-items-center flex-fill">
-                                                <img class="avatar lg rounded-circle img-thumbnail" src="assets/images/lg/avatar7.jpg" alt="profile">
-                                                <div class="d-flex flex-column ps-3">
-                                                    <h6 class="fw-bold mb-0 small-14">Mary Butler</h6>
-                                                    <span class="text-muted">Writer</span>
-                                                </div>
-                                            </div>
-                                            <div class="time-block text-truncate">
-                                                <i class="icofont-clock-time"></i> 4.00 - 4:30
-                                            </div>
-                                        </div>
-                                        <div class="py-2 d-flex align-items-center border-bottom flex-wrap">
-                                            <div class="d-flex align-items-center flex-fill">
-                                                <img class="avatar lg rounded-circle img-thumbnail" src="assets/images/lg/avatar3.jpg" alt="profile">
-                                                <div class="d-flex flex-column ps-3">
-                                                    <h6 class="fw-bold mb-0 small-14">Youn Bel</h6>
-                                                    <span class="text-muted">Unity 3d</span>
-                                                </div>
-                                            </div>
-                                            <div class="time-block text-truncate">
-                                                <i class="icofont-clock-time"></i> 7.00 - 8.00
-                                            </div>
-                                        </div>
-                                        <div class="py-2 d-flex align-items-center  flex-wrap">
-                                            <div class="d-flex align-items-center flex-fill">
-                                                <img class="avatar lg rounded-circle img-thumbnail" src="assets/images/lg/avatar2.jpg" alt="profile">
-                                                <div class="d-flex flex-column ps-3">
-                                                    <h6 class="fw-bold mb-0 small-14">Gibson Butler</h6>
-                                                    <span class="text-muted">Networking</span>
-                                                </div>
-                                            </div>
-                                            <div class="time-block text-truncate">
-                                                <i class="icofont-clock-time"></i> 8.00 - 9.00
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="card light-danger-bg">
-                            <div class="card-header py-3 d-flex justify-content-between bg-transparent border-bottom-0">
-                                <h6 class="mb-0 fw-bold ">Top Perfrormers</h6>
-                            </div>
+                  <div class="col-sm-12">
+                        <div class="card mb-3">
                             <div class="card-body">
-                                <div class="row g-3 align-items-center">
-                                    <div class="col-md-12 col-lg-4 col-xl-4 col-xxl-2">
-                                        <p>You have 140 <span class="fw-bold">influencers </span> in your company.</p>
-                                        <div class="d-flex  justify-content-between text-center">
-                                            <div class="">
-                                                <h3 class="fw-bold">350</h3>
-                                                <span class="small">New Task</span>
-                                            </div>
-                                            <div class="">
-                                                <h3 class="fw-bold">130</h3>
-                                                <span class="small">Task Completed</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12 col-lg-12 col-xl-12 col-xxl-10">
-                                        <div class="row g-3 row-cols-2 row-cols-sm-3 row-cols-md-3 row-cols-lg-3 row-cols-xl-3 row-cols-xxl-6 row-deck top-perfomer">
-                                            <div class="col">
-                                                <div class="card shadow">
-                                                    <div class="card-body text-center d-flex flex-column justify-content-center">
-                                                        <img class="avatar lg rounded-circle img-thumbnail mx-auto" src="assets/images/lg/avatar2.jpg" alt="profile">
-                                                        <h6 class="fw-bold my-2 small-14">Luke Short</h6>
-                                                        <span class="text-muted mb-2">@Short</span>
-                                                        <h4 class="fw-bold text-primary fs-3">80%</h4>
-                                                    </div>
+                                <table id="myProjectTable" class="table table-hover align-middle mb-0" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th>Project Name</th>
+                                            <th>Mon</th>
+                                            <th>Tue</th>
+                                            <th>Wed</th>
+                                            <th>Thur</th>
+                                            <th>Fri</th>
+                                            <th>Sat</th>
+                                            <th>Sun</th>
+                                            <th>Total</th>
+                                            <th><i class="icofont-gear fs-5"></i></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <select class="form-select" aria-label="Default select Project Category">
+                                                    <option selected>Rhinestone</option>
+                                                    <option value="1">Fast Cad</option>
+                                                    <option value="2">Box of Crayons</option>
+                                                    <option value="3">Gob Geeklords</option>
+                                                    <option value="4">Java Dalia</option>
+                                                    <option value="5">Practice to Perfect</option>
+                                                    <option value="6">Rhinestone</option>
+                                                    <option value="7">Social Geek Made</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <input type="time" class="form-control" id="timepickerded1" value="08:00:00">
+                                            </td>
+                                            <td>
+                                                <input type="time" class="form-control" id="timepickerded2" value="08:00:00">
+                                            </td>
+                                            <td>
+                                                <input type="time" class="form-control" id="timepickerded3" value="08:00:00">
+                                            </td>
+                                            <td>
+                                                <input type="time" class="form-control" id="timepickerded4" value="08:00:00">
+                                            </td>
+                                            <td>
+                                                <input type="time" class="form-control" id="timepickerded5" value="08:00:00">
+                                            </td>
+                                            <td>
+                                                <input type="time" class="form-control" id="timepickerded6" value="08:00:00">
+                                            </td>
+                                            <td>
+                                                <input type="time" class="form-control" id="timepickerded7" value="08:00:00">
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn light-success-bg">56</button>
+                                            </td>
+                                            <td>
+                                                <div class="btn-group" role="group" aria-label="Basic outlined example">
+                                                    <button type="button" class="btn btn-outline-secondary"><i class="icofont-edit text-success"></i></button>
+                                                    <button type="button" class="btn btn-outline-secondary deleterow"><i class="icofont-ui-delete text-danger"></i></button>
                                                 </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="card shadow">
-                                                    <div class="card-body text-center d-flex flex-column justify-content-center">
-                                                        <img class="avatar lg rounded-circle img-thumbnail mx-auto" src="assets/images/lg/avatar5.jpg" alt="profile">
-                                                        <h6 class="fw-bold my-2 small-14">John Hard</h6>
-                                                        <span class="text-muted mb-2">@rdacre</span>
-                                                        <h4 class="fw-bold text-primary fs-3">70%</h4>
-                                                    </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <select class="form-select" aria-label="Default select Project Category">
+                                                    <option selected>Practice to Perfect</option>
+                                                    <option value="1">Fast Cad</option>
+                                                    <option value="2">Box of Crayons</option>
+                                                    <option value="3">Gob Geeklords</option>
+                                                    <option value="4">Java Dalia</option>
+                                                    <option value="5">Practice to Perfect</option>
+                                                    <option value="6">Rhinestone</option>
+                                                    <option value="7">Social Geek Made</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <input type="time" class="form-control" id="timepickerded8" value="08:00:00">
+                                            </td>
+                                            <td>
+                                                <input type="time" class="form-control" id="timepickerded9" value="08:00:00">
+                                            </td>
+                                            <td>
+                                                <input type="time" class="form-control" id="timepickerded10" value="08:00:00">
+                                            </td>
+                                            <td>
+                                                <input type="time" class="form-control" id="timepickerded11" value="08:00:00">
+                                            </td>
+                                            <td>
+                                                <input type="time" class="form-control" id="timepickerded12" value="08:00:00">
+                                            </td>
+                                            <td>
+                                                <input type="time" class="form-control" id="timepickerded13" value="06:20:00">
+                                            </td>
+                                            <td>
+                                                <input type="time" class="form-control" id="timepickerded14" value="08:00:00">
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn light-success-bg">54.20</button>
+                                            </td>
+                                            <td>
+                                                <div class="btn-group" role="group" aria-label="Basic outlined example">
+                                                    <button type="button" class="btn btn-outline-secondary"><i class="icofont-edit text-success"></i></button>
+                                                    <button type="button" class="btn btn-outline-secondary deleterow"><i class="icofont-ui-delete text-danger"></i></button>
                                                 </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="card shadow">
-                                                    <div class="card-body text-center d-flex flex-column justify-content-center">
-                                                        <img class="avatar lg rounded-circle img-thumbnail mx-auto" src="assets/images/lg/avatar8.jpg" alt="profile">
-                                                        <h6 class="fw-bold my-2 small-14">Paul Rees</h6>
-                                                        <span class="text-muted mb-2">@Rees</span>
-                                                        <h4 class="fw-bold text-primary fs-3">77%</h4>
-                                                    </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <select class="form-select" aria-label="Default select Project Category">
+                                                    <option selected>Java Dalia</option>
+                                                    <option value="1">Fast Cad</option>
+                                                    <option value="2">Box of Crayons</option>
+                                                    <option value="3">Gob Geeklords</option>
+                                                    <option value="4">Java Dalia</option>
+                                                    <option value="5">Practice to Perfect</option>
+                                                    <option value="6">Rhinestone</option>
+                                                    <option value="7">Social Geek Made</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <input type="time" class="form-control" id="timepickerded15" value="08:00:00">
+                                            </td>
+                                            <td>
+                                                <input type="time" class="form-control" id="timepickerded16" value="08:00:00">
+                                            </td>
+                                            <td>
+                                                <input type="time" class="form-control" id="timepickerded17" value="08:00:00">
+                                            </td>
+                                            <td>
+                                                <input type="time" class="form-control" id="timepickerded18" value="08:00:00">
+                                            </td>
+                                            <td>
+                                                <input type="time" class="form-control" id="timepickerded19" value="08:00:00">
+                                            </td>
+                                            <td>
+                                                <input type="time" class="form-control" id="timepickerded20" value="08:00:00">
+                                            </td>
+                                            <td>
+                                                <input type="time" class="form-control" id="timepickerded21" value="08:00:00">
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn light-success-bg">56</button>
+                                            </td>
+                                            <td>
+                                                <div class="btn-group" role="group" aria-label="Basic outlined example">
+                                                    <button type="button" class="btn btn-outline-secondary"><i class="icofont-edit text-success"></i></button>
+                                                    <button type="button" class="btn btn-outline-secondary deleterow"><i class="icofont-ui-delete text-danger"></i></button>
                                                 </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="card shadow">
-                                                    <div class="card-body text-center d-flex flex-column justify-content-center">
-                                                        <img class="avatar lg rounded-circle img-thumbnail mx-auto" src="assets/images/lg/avatar9.jpg" alt="profile">
-                                                        <h6 class="fw-bold my-2 small-14">Rachel Parr</h6>
-                                                        <span class="text-muted mb-2">@Parr</span>
-                                                        <h4 class="fw-bold text-primary fs-3">85%</h4>
-                                                    </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <select class="form-select" aria-label="Default select Project Category">
+                                                    <option selected>Gob Geeklords</option>
+                                                    <option value="1">Fast Cad</option>
+                                                    <option value="2">Box of Crayons</option>
+                                                    <option value="3">Gob Geeklords</option>
+                                                    <option value="4">Java Dalia</option>
+                                                    <option value="5">Practice to Perfect</option>
+                                                    <option value="6">Rhinestone</option>
+                                                    <option value="7">Social Geek Made</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <input type="time" class="form-control" id="timepickerded22" value="08:00:00">
+                                            </td>
+                                            <td>
+                                                <input type="time" class="form-control" id="timepickerded23" value="04:00:00">
+                                            </td>
+                                            <td>
+                                                <input type="time" class="form-control" id="timepickerded24" value="04:00:00">
+                                            </td>
+                                            <td>
+                                                <input type="time" class="form-control" id="timepickerded25" value="08:00:00">
+                                            </td>
+                                            <td>
+                                                <input type="time" class="form-control" id="timepickerded26" value="08:00:00">
+                                            </td>
+                                            <td>
+                                                <input type="time" class="form-control" id="timepickerded27" value="08:00:00">
+                                            </td>
+                                            <td>
+                                                <input type="time" class="form-control" id="timepickerded28" value="08:00:00">
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn light-success-bg">48</button>
+                                            </td>
+                                            <td>
+                                                <div class="btn-group" role="group" aria-label="Basic outlined example">
+                                                    <button type="button" class="btn btn-outline-secondary"><i class="icofont-edit text-success"></i></button>
+                                                    <button type="button" class="btn btn-outline-secondary deleterow"><i class="icofont-ui-delete text-danger"></i></button>
                                                 </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="card shadow">
-                                                    <div class="card-body text-center d-flex flex-column justify-content-center">
-                                                        <img class="avatar lg rounded-circle img-thumbnail mx-auto" src="assets/images/lg/avatar12.jpg" alt="profile">
-                                                        <h6 class="fw-bold my-2 small-14">Eric Reid</h6>
-                                                        <span class="text-muted mb-2">@Eric</span>
-                                                        <h4 class="fw-bold text-primary fs-3">95%</h4>
-                                                    </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <select class="form-select" aria-label="Default select Project Category">
+                                                    <option selected>Box of Crayons</option>
+                                                    <option value="1">Fast Cad</option>
+                                                    <option value="2">Box of Crayons</option>
+                                                    <option value="3">Gob Geeklords</option>
+                                                    <option value="4">Java Dalia</option>
+                                                    <option value="5">Practice to Perfect</option>
+                                                    <option value="6">Rhinestone</option>
+                                                    <option value="7">Social Geek Made</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <input type="time" class="form-control" id="timepickerded29" value="08:00:00">
+                                            </td>
+                                            <td>
+                                                <input type="time" class="form-control" id="timepickerded30" value="08:00:00">
+                                            </td>
+                                            <td>
+                                                <input type="time" class="form-control" id="timepickerded31" value="08:00:00">
+                                            </td>
+                                            <td>
+                                                <input type="time" class="form-control" id="timepickerded32" value="08:00:00">
+                                            </td>
+                                            <td>
+                                                <input type="time" class="form-control" id="timepickerded33" value="08:00:00">
+                                            </td>
+                                            <td>
+                                                <input type="time" class="form-control" id="timepickerded34" value="05:00:00">
+                                            </td>
+                                            <td>
+                                                <input type="time" class="form-control" id="timepickerded35" value="05:00:00">
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn light-success-bg">50</button>
+                                            </td>
+                                            <td>
+                                                <div class="btn-group" role="group" aria-label="Basic outlined example">
+                                                    <button type="button" class="btn btn-outline-secondary"><i class="icofont-edit text-success"></i></button>
+                                                    <button type="button" class="btn btn-outline-secondary deleterow"><i class="icofont-ui-delete text-danger"></i></button>
                                                 </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="card shadow">
-                                                    <div class="card-body text-center d-flex flex-column justify-content-center">
-                                                        <img class="avatar lg rounded-circle img-thumbnail mx-auto" src="assets/images/lg/avatar3.jpg" alt="profile">
-                                                        <h6 class="fw-bold my-2 small-14">Jan Ince</h6>
-                                                        <span class="text-muted mb-2">@Ince</span>
-                                                        <h4 class="fw-bold text-primary fs-3">97%</h4>
-                                                    </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <select class="form-select" aria-label="Default select Project Category">
+                                                    <option selected>Fast Cad</option>
+                                                    <option value="1">Fast Cad</option>
+                                                    <option value="2">Box of Crayons</option>
+                                                    <option value="3">Gob Geeklords</option>
+                                                    <option value="4">Java Dalia</option>
+                                                    <option value="5">Practice to Perfect</option>
+                                                    <option value="6">Rhinestone</option>
+                                                    <option value="7">Social Geek Made</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <input type="time" class="form-control" id="timepickerded36" value="08:00:00">
+                                            </td>
+                                            <td>
+                                                <input type="time" class="form-control" id="timepickerded37" value="08:00:00">
+                                            </td>
+                                            <td>
+                                                <input type="time" class="form-control" id="timepickerded38" value="08:00:00">
+                                            </td>
+                                            <td>
+                                                <input type="time" class="form-control" id="timepickerded39" value="08:00:00">
+                                            </td>
+                                            <td>
+                                                <input type="time" class="form-control" id="timepickerded40" value="08:00:00">
+                                            </td>
+                                            <td>
+                                                <input type="time" class="form-control" id="timepickerded41" value="08:00:00">
+                                            </td>
+                                            <td>
+                                                <input type="time" class="form-control" id="timepickerded42" value="08:00:00">
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn light-success-bg">56</button>
+                                            </td>
+                                            <td>
+                                                <div class="btn-group" role="group" aria-label="Basic outlined example">
+                                                    <button type="button" class="btn btn-outline-secondary"><i class="icofont-edit text-success"></i></button>
+                                                    <button type="button" class="btn btn-outline-secondary deleterow"><i class="icofont-ui-delete text-danger"></i></button>
                                                 </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <select class="form-select" aria-label="Default select Project Category">
+                                                    <option selected>Project Name Select</option>
+                                                    <option value="1">Fast Cad</option>
+                                                    <option value="2">Box of Crayons</option>
+                                                    <option value="3">Gob Geeklords</option>
+                                                    <option value="4">Java Dalia</option>
+                                                    <option value="5">Practice to Perfect</option>
+                                                    <option value="6">Rhinestone</option>
+                                                    <option value="7">Social Geek Made</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <input type="time" class="form-control" id="timepickerded43">
+                                            </td>
+                                            <td>
+                                                <input type="time" class="form-control" id="timepickerded44">
+                                            </td>
+                                            <td>
+                                                <input type="time" class="form-control" id="timepickerded45">
+                                            </td>
+                                            <td>
+                                                <input type="time" class="form-control" id="timepickerded46">
+                                            </td>
+                                            <td>
+                                                <input type="time" class="form-control" id="timepickerded47">
+                                            </td>
+                                            <td>
+                                                <input type="time" class="form-control" id="timepickerded48">
+                                            </td>
+                                            <td>
+                                                <input type="time" class="form-control" id="timepickerded49">
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn light-success-bg">00</button>
+                                            </td>
+                                            <td>
+                                                <div class="btn-group" role="group" aria-label="Basic outlined example">
+                                                    <button type="button" class="btn btn-outline-secondary"><i class="icofont-edit text-success"></i></button>
+                                                    <button type="button" class="btn btn-outline-secondary deleterow"><i class="icofont-ui-delete text-danger"></i></button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <select class="form-select" aria-label="Default select Project Category">
+                                                    <option selected>Project Name Select</option>
+                                                    <option value="1">Fast Cad</option>
+                                                    <option value="2">Box of Crayons</option>
+                                                    <option value="3">Gob Geeklords</option>
+                                                    <option value="4">Java Dalia</option>
+                                                    <option value="5">Practice to Perfect</option>
+                                                    <option value="6">Rhinestone</option>
+                                                    <option value="7">Social Geek Made</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <input type="time" class="form-control" id="timepickerded50">
+                                            </td>
+                                            <td>
+                                                <input type="time" class="form-control" id="timepickerded51">
+                                            </td>
+                                            <td>
+                                                <input type="time" class="form-control" id="timepickerded52">
+                                            </td>
+                                            <td>
+                                                <input type="time" class="form-control" id="timepickerded53">
+                                            </td>
+                                            <td>
+                                                <input type="time" class="form-control" id="timepickerded54">
+                                            </td>
+                                            <td>
+                                                <input type="time" class="form-control" id="timepickerded55">
+                                            </td>
+                                            <td>
+                                                <input type="time" class="form-control" id="timepickerded56">
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn light-success-bg">00</button>
+                                            </td>
+                                            <td>
+                                                <div class="btn-group" role="group" aria-label="Basic outlined example">
+                                                    <button type="button" class="btn btn-outline-secondary"><i class="icofont-edit text-success"></i></button>
+                                                    <button type="button" class="btn btn-outline-secondary deleterow"><i class="icofont-ui-delete text-danger"></i></button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
-                    </div>
+                  </div>
                 </div><!-- Row End -->
             </div>
-        </div> 
-
+        </div>
+        
         <!-- Modal Members-->
         <div class="modal fade" id="addUser" tabindex="-1" aria-labelledby="addUserLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -755,7 +833,29 @@
                 </div>
             </div>
             </div>
-        </div> 
+        </div>
+
+        <!-- Send sheet-->
+        <div class="modal fade" id="sendsheet" tabindex="-1"  aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-md modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title  fw-bold" id="sendsheetLabel"> Sheets Sent</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Done</button>
+                    <button type="submit" class="btn btn-primary">sent</button>
+                </div>
+            </div>
+            </div>
+        </div>
     </div>
 
     <!-- start: template setting, and more. -->
@@ -807,19 +907,39 @@
 			</div>
 		</div>
 	</div>
-
 </div>
 
 <!-- Jquery Core Js -->
 <script src="assets/bundles/libscripts.bundle.js"></script>
 
 <!-- Plugin Js-->
-<script src="assets/bundles/apexcharts.bundle.js"></script>
+<script src="assets/bundles/dataTables.bundle.js"></script>
 
 <!-- Jquery Page Js -->
 <script src="../js/template.js"></script>
-<script src="../js/page/hr.js"></script>
+<script>
+    // project data table
+    $(document).ready(function() {
+        $('#myProjectTable')
+        .addClass( 'nowrap' )
+        .dataTable( {
+            responsive: true,
+            columnDefs: [
+                { targets: [-1, -3], className: 'dt-body-right' }
+            ]
+        });
+        $('.deleterow').on('click',function(){
+        var tablename = $(this).closest('table').DataTable();  
+        tablename
+                .row( $(this)
+                .parents('tr') )
+                .remove()
+                .draw();
+
+        } );
+    });
+</script>
 </body>
 
-<!-- Mirrored from pixelwibes.com/template/my-task/html/dist/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 27 Jul 2024 11:49:02 GMT -->
-</html> 
+<!-- Mirrored from pixelwibes.com/template/my-task/html/dist/timesheet.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 27 Jul 2024 11:50:58 GMT -->
+</html>

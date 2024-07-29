@@ -2,20 +2,21 @@
 <html class="no-js" lang="en" dir="ltr">
 
 
-<!-- Mirrored from pixelwibes.com/template/my-task/html/dist/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 27 Jul 2024 11:48:24 GMT -->
+<!-- Mirrored from pixelwibes.com/template/my-task/html/dist/create-invoice.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 27 Jul 2024 11:51:15 GMT -->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>:: My-Task:: Employee Dashboard </title>
+    <title>:: My-Task:: Create Invoice</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Favicon-->
+  
     <!-- project css file  -->
     <link rel="stylesheet" href="assets/css/my-task.style.min.css">
 </head>
-
 <body  data-mytask="theme-indigo">
+
 <div id="mytask-layout">
-    
+
     <!-- sidebar -->
     <div class="sidebar px-4 py-4 py-md-5 me-0">
         <div class="d-flex flex-column h-100">
@@ -30,14 +31,13 @@
                 <span class="logo-text">My-Task</span>
             </a>
             <!-- Menu: main ul -->
-
             <ul class="menu-list flex-grow-1 mt-3">
                 <li class="collapsed">
-                    <a class="m-link active" data-bs-toggle="collapse" data-bs-target="#dashboard-Components" href="#">
+                    <a class="m-link" data-bs-toggle="collapse" data-bs-target="#dashboard-Components" href="#">
                         <i class="icofont-home fs-5"></i> <span>Dashboard</span> <span class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a>
                     <!-- Menu: Sub menu ul -->
-                    <ul class="sub-menu collapse show" id="dashboard-Components">
-                        <li><a class="ms-link active" href="index-2.html"> <span>Hr Dashboard</span></a></li>
+                    <ul class="sub-menu collapse" id="dashboard-Components">
+                        <li><a class="ms-link" href="index-2.html"> <span>Hr Dashboard</span></a></li>
                         <li><a class="ms-link" href="project-dashboard.html"> <span>Project Dashboard</span></a></li>
                     </ul>
                 </li>
@@ -72,10 +72,10 @@
                     </ul>
                 </li>
                 <li class="collapsed">
-                    <a class="m-link" data-bs-toggle="collapse" data-bs-target="#emp-Components" href="#"><i
+                    <a class="m-link active" data-bs-toggle="collapse" data-bs-target="#emp-Components" href="#"><i
                             class="icofont-users-alt-5"></i> <span>Employees</span> <span class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a>
                     <!-- Menu: Sub menu ul -->
-                    <ul class="sub-menu collapse" id="emp-Components">
+                    <ul class="sub-menu collapse show" id="emp-Components">
                         <li><a class="ms-link" href="members.html"> <span>Members</span></a></li>
                         <li><a class="ms-link" href="employee-profile.html"> <span>Members Profile</span></a></li>
                         <li><a class="ms-link" href="holidays.html"> <span>Holidays</span></a></li>
@@ -83,7 +83,7 @@
                         <li><a class="ms-link" href="attendance.html"> <span>Attendance</span></a></li>
                         <li><a class="ms-link" href="leave-request.html"> <span>Leave Request</span></a></li>
                         <li><a class="ms-link" href="department.html"> <span>Department</span></a></li>
-                        <li><a class="ms-link" href="loan.html"> <span>Loan</span></a></li>
+                        <li><a class="ms-link active" href="loan.html"> <span>Loan</span></a></li>
                     </ul>
                 </li>
                
@@ -95,7 +95,7 @@
                         <li><a class="ms-link" href="invoices.html"><span>Invoices</span> </a></li>
                         <li><a class="ms-link" href="payments.html"><span>Payments</span> </a></li>
                         <li><a class="ms-link" href="expenses.html"><span>Expenses</span> </a></li>
-                        <li><a class="ms-link" href="create-invoice.html"><span>Create Invoice</span> </a></li>
+                        <li><a class="ms-link active" href="create-invoice.html"><span>Create Invoice</span> </a></li>
                     </ul>
                 </li>
                 <li class="collapsed">
@@ -116,7 +116,7 @@
                         <li><a class="ms-link" href="chat.html"><span>Chat App</span></a></li>
                     </ul>
                 </li>
-                <li class="collapsed">
+                                <li class="collapsed">
                     <a class="m-link" data-bs-toggle="collapse" data-bs-target="#extra-Components" href="#">
                         <i class="icofont-code-alt"></i> <span>Other Pages</span> <span class="arrow icofont-dotted-down ms-auto text-end fs-5"></span></a>
                     <!-- Menu: Sub menu ul -->
@@ -133,8 +133,6 @@
                 </li>
                 <li><a class="m-link" href="ui-elements/ui-alerts.html"><i class="icofont-paint"></i> <span>UI Components</span></a></li>
             </ul>
-
-            
             
             <!-- Menu: menu collepce btn -->
             <button type="button" class="btn btn-link sidebar-mini-btn text-light">
@@ -144,7 +142,7 @@
     </div>
 
     <!-- main body area -->
-    <div class="main px-lg-4 px-md-4">
+    <div class="main px-lg-4 px-md-4"> 
 
         <!-- Body: Header -->
         <div class="header">
@@ -304,323 +302,142 @@
             </nav>
         </div>
 
-        <!-- Body: Body -->
-        <div class="body d-flex py-3">
+        <!-- Body: Body -->       
+        <div class="body d-flex py-lg-3 py-md-2">
             <div class="container-xxl">
-                <div class="row clearfix g-3">
-                    <div class="col-xl-8 col-lg-12 col-md-12 flex-column">
-                        <div class="row g-3">
-                            <div class="col-md-12">
-                                <div class="card">
-                                    <div class="card-header py-3 d-flex justify-content-between bg-transparent border-bottom-0">
-                                        <h6 class="mb-0 fw-bold ">Employees Info</h6>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="ac-line-transparent" id="apex-emplyoeeAnalytics"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="card">
-                                    <div class="card-header py-3 d-flex justify-content-between bg-transparent border-bottom-0">
-                                        <h6 class="mb-0 fw-bold ">Employees Availability</h6>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="row g-2 row-deck">
-                                            <div class="col-md-6 col-sm-6">
-                                                <div class="card">
-                                                    <div class="card-body ">
-                                                        <i class="icofont-checked fs-3"></i>
-                                                        <h6 class="mt-3 mb-0 fw-bold small-14">Attendance</h6>
-                                                        <span class="text-muted">400</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-sm-6">
-                                                <div class="card">
-                                                    <div class="card-body ">
-                                                            <i class="icofont-stopwatch fs-3"></i>
-                                                        <h6 class="mt-3 mb-0 fw-bold small-14">Late Coming</h6>
-                                                        <span class="text-muted">17</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-sm-6">
-                                                <div class="card">
-                                                    <div class="card-body ">
-                                                            <i class="icofont-ban fs-3"></i>
-                                                        <h6 class="mt-3 mb-0 fw-bold small-14">Absent</h6>
-                                                        <span class="text-muted">06</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-sm-6">
-                                                <div class="card">
-                                                    <div class="card-body ">
-                                                        <i class="icofont-beach-bed fs-3"></i>
-                                                        <h6 class="mt-3 mb-0 fw-bold small-14">Leave Apply</h6>
-                                                        <span class="text-muted">14</span> 
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="card">
-                                    <div class="card-header py-3 d-flex justify-content-between bg-transparent border-bottom-0">
-                                        <h6 class="mb-0 fw-bold ">Total Employees</h6>
-                                        <h4 class="mb-0 fw-bold ">423</h4>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="mt-3" id="apex-MainCategories"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="card">
-                                    <div class="card-header py-3 d-flex justify-content-between bg-transparent border-bottom-0">
-                                        <h6 class="mb-0 fw-bold ">Top Hiring Sources</h6>
-                                    </div>
-                                    <div class="card-body">
-                                        <div id="hiringsources"></div>
-                                    </div>
-                                </div>
-                            </div>
+                <div class="row align-items-center">
+                    <div class="border-0 mb-4">
+                        <div class="card-header py-3 no-bg bg-transparent d-flex align-items-center px-0 justify-content-between border-bottom flex-wrap">
+                            <h3 class="fw-bold mb-0">Create Invoice</h3>
                         </div>
                     </div>
-                    <div class="col-xl-4 col-lg-12 col-md-12">
-                        <div class="row g-3 row-deck">
-                            <div class="col-md-6 col-lg-6 col-xl-12">
-                                <div class="card bg-primary">
-                                    <div class="card-body row">
-                                        <div class="col">
-                                            <span class="avatar lg bg-white rounded-circle text-center d-flex align-items-center justify-content-center"><i class="icofont-file-text fs-5"></i></span>
-                                            <h1 class="mt-3 mb-0 fw-bold text-white">1546</h1>
-                                            <span class="text-white">Applications</span>
-                                        </div>
-                                        <div class="col">
-                                            <img class="img-fluid" src="assets/images/interview.svg" alt="interview">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-lg-6 col-xl-12  flex-column">
-                                <div class="card mb-3">
-                                    <div class="card-body">
-                                        <div class="d-flex align-items-center flex-fill">
-                                            <span class="avatar lg light-success-bg rounded-circle text-center d-flex align-items-center justify-content-center"><i class="icofont-users-alt-2 fs-5"></i></span>
-                                            <div class="d-flex flex-column ps-3  flex-fill">
-                                                <h6 class="fw-bold mb-0 fs-4">246</h6>
-                                                <span class="text-muted">Interviews</span>
-                                            </div>
-                                            <i class="icofont-chart-bar-graph fs-3 text-muted"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="d-flex align-items-center flex-fill">
-                                            <span class="avatar lg light-success-bg rounded-circle text-center d-flex align-items-center justify-content-center"><i class="icofont-holding-hands fs-5"></i></span>
-                                            <div class="d-flex flex-column ps-3 flex-fill">
-                                                <h6 class="fw-bold mb-0 fs-4">101</h6>
-                                                <span class="text-muted">Hired</span>
-                                            </div>
-                                            <i class="icofont-chart-line fs-3 text-muted"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-12 col-lg-12 col-xl-12">
-                                <div class="card">
-                                <div class="card-header py-3 d-flex justify-content-between bg-transparent border-bottom-0">
-                                    <h6 class="mb-0 fw-bold ">Upcomming Interviews</h6>
-                                </div>
-                                <div class="card-body">
-                                    <div class="flex-grow-1">
-                                        <div class="py-2 d-flex align-items-center border-bottom flex-wrap">
-                                            <div class="d-flex align-items-center flex-fill">
-                                                <img class="avatar lg rounded-circle img-thumbnail" src="assets/images/lg/avatar2.jpg" alt="profile">
-                                                <div class="d-flex flex-column ps-3">
-                                                    <h6 class="fw-bold mb-0 small-14">Natalie Gibson</h6>
-                                                    <span class="text-muted">Ui/UX Designer</span>
-                                                </div>
-                                            </div>
-                                            <div class="time-block text-truncate">
-                                                <i class="icofont-clock-time"></i> 1.30 - 1:30
-                                            </div>
-                                        </div>
-                                        <div class="py-2 d-flex align-items-center border-bottom flex-wrap">
-                                            <div class="d-flex align-items-center flex-fill">
-                                                <img class="avatar lg rounded-circle img-thumbnail" src="assets/images/lg/avatar9.jpg" alt="profile">
-                                                <div class="d-flex flex-column ps-3">
-                                                    <h6 class="fw-bold mb-0 small-14">Peter	Piperg</h6>
-                                                    <span class="text-muted">Web Design</span>
-                                                </div>
-                                            </div>
-                                            <div class="time-block text-truncate">
-                                                <i class="icofont-clock-time"></i> 9.00 - 1:30
-                                            </div>
-                                        </div>
-                                        <div class="py-2 d-flex align-items-center border-bottom flex-wrap">
-                                            <div class="d-flex align-items-center flex-fill">
-                                                <img class="avatar lg rounded-circle img-thumbnail" src="assets/images/lg/avatar12.jpg" alt="profile">
-                                                <div class="d-flex flex-column ps-3">
-                                                    <h6 class="fw-bold mb-0 small-14">Robert Young</h6>
-                                                    <span class="text-muted">PHP Developer</span>
-                                                </div>
-                                            </div>
-                                            <div class="time-block text-truncate">
-                                                <i class="icofont-clock-time"></i> 1.30 - 2:30
-                                            </div>
-                                        </div>
-                                        <div class="py-2 d-flex align-items-center border-bottom flex-wrap">
-                                            <div class="d-flex align-items-center flex-fill">
-                                                <img class="avatar lg rounded-circle img-thumbnail" src="assets/images/lg/avatar8.jpg" alt="profile">
-                                                <div class="d-flex flex-column ps-3">
-                                                    <h6 class="fw-bold mb-0 small-14">Victoria Vbell</h6>
-                                                    <span class="text-muted">IOS Developer</span>
-                                                </div>
-                                            </div>
-                                            <div class="time-block text-truncate">
-                                                <i class="icofont-clock-time"></i> 2.00 - 3:30
-                                            </div>
-                                        </div>
-                                        <div class="py-2 d-flex align-items-center border-bottom flex-wrap">
-                                            <div class="d-flex align-items-center flex-fill">
-                                                <img class="avatar lg rounded-circle img-thumbnail" src="assets/images/lg/avatar7.jpg" alt="profile">
-                                                <div class="d-flex flex-column ps-3">
-                                                    <h6 class="fw-bold mb-0 small-14">Mary Butler</h6>
-                                                    <span class="text-muted">Writer</span>
-                                                </div>
-                                            </div>
-                                            <div class="time-block text-truncate">
-                                                <i class="icofont-clock-time"></i> 4.00 - 4:30
-                                            </div>
-                                        </div>
-                                        <div class="py-2 d-flex align-items-center border-bottom flex-wrap">
-                                            <div class="d-flex align-items-center flex-fill">
-                                                <img class="avatar lg rounded-circle img-thumbnail" src="assets/images/lg/avatar3.jpg" alt="profile">
-                                                <div class="d-flex flex-column ps-3">
-                                                    <h6 class="fw-bold mb-0 small-14">Youn Bel</h6>
-                                                    <span class="text-muted">Unity 3d</span>
-                                                </div>
-                                            </div>
-                                            <div class="time-block text-truncate">
-                                                <i class="icofont-clock-time"></i> 7.00 - 8.00
-                                            </div>
-                                        </div>
-                                        <div class="py-2 d-flex align-items-center  flex-wrap">
-                                            <div class="d-flex align-items-center flex-fill">
-                                                <img class="avatar lg rounded-circle img-thumbnail" src="assets/images/lg/avatar2.jpg" alt="profile">
-                                                <div class="d-flex flex-column ps-3">
-                                                    <h6 class="fw-bold mb-0 small-14">Gibson Butler</h6>
-                                                    <span class="text-muted">Networking</span>
-                                                </div>
-                                            </div>
-                                            <div class="time-block text-truncate">
-                                                <i class="icofont-clock-time"></i> 8.00 - 9.00
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                </div>
-                            </div>
+                </div> <!-- Row end  -->
+                <div class="row g-3">
+                    <div class="col-12">
+                      <div class="card print_invoice">
+                        <div class="card-header border-bottom fs-4">
+                          <h5 class="card-title mb-0 fw-bold">INVOICE</h5>
                         </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="card light-danger-bg">
-                            <div class="card-header py-3 d-flex justify-content-between bg-transparent border-bottom-0">
-                                <h6 class="mb-0 fw-bold ">Top Perfrormers</h6>
-                            </div>
-                            <div class="card-body">
-                                <div class="row g-3 align-items-center">
-                                    <div class="col-md-12 col-lg-4 col-xl-4 col-xxl-2">
-                                        <p>You have 140 <span class="fw-bold">influencers </span> in your company.</p>
-                                        <div class="d-flex  justify-content-between text-center">
-                                            <div class="">
-                                                <h3 class="fw-bold">350</h3>
-                                                <span class="small">New Task</span>
-                                            </div>
-                                            <div class="">
-                                                <h3 class="fw-bold">130</h3>
-                                                <span class="small">Task Completed</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12 col-lg-12 col-xl-12 col-xxl-10">
-                                        <div class="row g-3 row-cols-2 row-cols-sm-3 row-cols-md-3 row-cols-lg-3 row-cols-xl-3 row-cols-xxl-6 row-deck top-perfomer">
-                                            <div class="col">
-                                                <div class="card shadow">
-                                                    <div class="card-body text-center d-flex flex-column justify-content-center">
-                                                        <img class="avatar lg rounded-circle img-thumbnail mx-auto" src="assets/images/lg/avatar2.jpg" alt="profile">
-                                                        <h6 class="fw-bold my-2 small-14">Luke Short</h6>
-                                                        <span class="text-muted mb-2">@Short</span>
-                                                        <h4 class="fw-bold text-primary fs-3">80%</h4>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="card shadow">
-                                                    <div class="card-body text-center d-flex flex-column justify-content-center">
-                                                        <img class="avatar lg rounded-circle img-thumbnail mx-auto" src="assets/images/lg/avatar5.jpg" alt="profile">
-                                                        <h6 class="fw-bold my-2 small-14">John Hard</h6>
-                                                        <span class="text-muted mb-2">@rdacre</span>
-                                                        <h4 class="fw-bold text-primary fs-3">70%</h4>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="card shadow">
-                                                    <div class="card-body text-center d-flex flex-column justify-content-center">
-                                                        <img class="avatar lg rounded-circle img-thumbnail mx-auto" src="assets/images/lg/avatar8.jpg" alt="profile">
-                                                        <h6 class="fw-bold my-2 small-14">Paul Rees</h6>
-                                                        <span class="text-muted mb-2">@Rees</span>
-                                                        <h4 class="fw-bold text-primary fs-3">77%</h4>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="card shadow">
-                                                    <div class="card-body text-center d-flex flex-column justify-content-center">
-                                                        <img class="avatar lg rounded-circle img-thumbnail mx-auto" src="assets/images/lg/avatar9.jpg" alt="profile">
-                                                        <h6 class="fw-bold my-2 small-14">Rachel Parr</h6>
-                                                        <span class="text-muted mb-2">@Parr</span>
-                                                        <h4 class="fw-bold text-primary fs-3">85%</h4>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="card shadow">
-                                                    <div class="card-body text-center d-flex flex-column justify-content-center">
-                                                        <img class="avatar lg rounded-circle img-thumbnail mx-auto" src="assets/images/lg/avatar12.jpg" alt="profile">
-                                                        <h6 class="fw-bold my-2 small-14">Eric Reid</h6>
-                                                        <span class="text-muted mb-2">@Eric</span>
-                                                        <h4 class="fw-bold text-primary fs-3">95%</h4>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="card shadow">
-                                                    <div class="card-body text-center d-flex flex-column justify-content-center">
-                                                        <img class="avatar lg rounded-circle img-thumbnail mx-auto" src="assets/images/lg/avatar3.jpg" alt="profile">
-                                                        <h6 class="fw-bold my-2 small-14">Jan Ince</h6>
-                                                        <span class="text-muted mb-2">@Ince</span>
-                                                        <h4 class="fw-bold text-primary fs-3">97%</h4>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                        <div class="card-body">
+                          <div class="card p-3">
+                            <div class="border-bottom pb-2">
+                              <textarea class="form-control address">Jone Martin,
+2838 Oliverio Drive
+Allen, Kansas 66833
+Phone: (620) 528-2614
+                              </textarea>
+                              <div id="logo">
+                                <div id="logoctr">
+                                  <a href="javascript:;" id="change-logo" title="Change logo">Change Logo</a>
+                                  <a href="javascript:;" id="save-logo" title="Save changes">Save</a> | <a href="javascript:;" id="delete-logo" title="Delete logo">Delete Logo</a>
+                                  <a href="javascript:;" id="cancel-logo" title="Cancel changes">Cancel</a>
                                 </div>
+                                <div id="logohelp">
+                                  <input id="imageloc" type="text" size="50" value=""><br> (max width: 540px, max height: 100px)
+                                </div>
+                                <img id="image" src="assets/images/logo.svg" alt="logo">
+                              </div>
                             </div>
+                            <div style="clear:both"></div>
+                            <div class="customer mt-4">
+                              <textarea class="form-control customer-title">Widget Catalog</textarea>
+                              <table class="meta">
+                                <tbody>
+                                  <tr>
+                                    <td class="meta-head">Invoice #</td>
+                                    <td><textarea class="form-control">000123</textarea></td>
+                                  </tr>
+                                  <tr>
+                                    <td class="meta-head">Date</td>
+                                    <td><textarea class="form-control" id="date">December 15, 2021</textarea></td>
+                                  </tr>
+                                  <tr>
+                                    <td class="meta-head">Amount Due</td>
+                                    <td>
+                                      <div class="due">$875.00</div>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                            <div style="clear:both"></div>
+                            <table class="items">
+                              <tbody>
+                                <tr>
+                                  <th>Item</th>
+                                  <th>Description</th>
+                                  <th style="width: 140px;">Unit Cost</th>
+                                  <th style="width: 70px;">Quantity</th>
+                                  <th style="width: 140px;">Price</th>
+                                </tr>
+                                <tr class="item-row">
+                                  <td class="item-name">
+                                    <div class="delete-wpr"><textarea>Web Updates</textarea><a class="delete" href="javascript:;" title="Remove row">X</a></div>
+                                  </td>
+                                  <td class="description">
+                                    <textarea>Monthly web updates for Pixelwibes (Nov. 1 - Nov. 30, 2021)</textarea>
+                                  </td>
+                                  <td><textarea class="cost">$650.00</textarea></td>
+                                  <td><textarea class="qty">1</textarea></td>
+                                  <td><span class="price">$650.00</span></td>
+                                </tr>
+                                <tr class="item-row">
+                                  <td class="item-name">
+                                    <div class="delete-wpr"><textarea>SSL Renewals</textarea><a class="delete" href="javascript:;" title="Remove row">X</a></div>
+                                  </td>
+                                  <td class="description"><textarea>Yearly renewals of SSL certificates on main domain and several subdomains</textarea></td>
+                                  <td><textarea class="cost">$75.00</textarea></td>
+                                  <td><textarea class="qty">3</textarea></td>
+                                  <td><span class="price">$225.00</span></td>
+                                </tr>
+                                <tr id="hiderow">
+                                  <td colspan="5"><a id="addrow" href="javascript:;" title="Add a row">Add a row</a></td>
+                                </tr>
+                                <tr>
+                                  <td colspan="2" class="blank"> </td>
+                                  <td colspan="2" class="total-line">Subtotal</td>
+                                  <td class="total-value">
+                                    <div id="subtotal">$875.00</div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td colspan="2" class="blank"> </td>
+                                  <td colspan="2" class="total-line">Total</td>
+                                  <td class="total-value">
+                                    <div id="total">$875.00</div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td colspan="2" class="blank"> </td>
+                                  <td colspan="2" class="total-line">Amount Paid</td>
+                                  <td class="total-value"><textarea id="paid">$0.00</textarea></td>
+                                </tr>
+                                <tr>
+                                  <td colspan="2" class="blank"> </td>
+                                  <td colspan="2" class="total-line balance">Balance Due</td>
+                                  <td class="total-value balance">
+                                    <div class="due">$875.00</div>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                            <div style="clear:both"></div>
+                            <div class="footer-note mt-5">
+                              <h5>Terms</h5>
+                              <textarea class="form-control bg-light">NET 30 Days. Finance Charge of 1.5% will be made on unpaid balances after 30 days.</textarea>
+                            </div>
+                          </div>
                         </div>
+                      </div>
                     </div>
-                </div><!-- Row End -->
+                    <div class="col-12 text-center text-md-end">
+                      <button type="button" class="btn btn-lg btn-primary" onclick="window.print();return false"><i class="fa fa-print me-2"></i>Print Invoice</button>
+                      <button type="button" class="btn btn-lg btn-secondary"><i class="fa fa-envelope me-2"></i>Send PDF</button>
+                    </div>
+                </div><!-- Row end  -->
             </div>
-        </div> 
-
+        </div>
+        
         <!-- Modal Members-->
         <div class="modal fade" id="addUser" tabindex="-1" aria-labelledby="addUserLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -755,9 +572,9 @@
                 </div>
             </div>
             </div>
-        </div> 
-    </div>
-
+        </div>
+    </div>       
+    
     <!-- start: template setting, and more. -->
 	<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas_setting" aria-labelledby="offcanvas_setting">
 		<div class="offcanvas-header">
@@ -807,19 +624,17 @@
 			</div>
 		</div>
 	</div>
-
 </div>
-
+ 
 <!-- Jquery Core Js -->
 <script src="assets/bundles/libscripts.bundle.js"></script>
 
-<!-- Plugin Js-->
-<script src="assets/bundles/apexcharts.bundle.js"></script>
+<!-- Plugin Js -->
+<script src="assets/bundles/invoice.bundle.js"></script>
 
 <!-- Jquery Page Js -->
 <script src="../js/template.js"></script>
-<script src="../js/page/hr.js"></script>
 </body>
 
-<!-- Mirrored from pixelwibes.com/template/my-task/html/dist/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 27 Jul 2024 11:49:02 GMT -->
-</html> 
+<!-- Mirrored from pixelwibes.com/template/my-task/html/dist/create-invoice.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 27 Jul 2024 11:51:18 GMT -->
+</html>
