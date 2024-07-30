@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Employees</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>All Employees</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Salary</th>
+                    <th>Bonus</th>
+                    <th>Phone</th>
+                    <th>Department</th>
+                    <th>Role</th>
+                    <th>Hire Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for emp in emps %}
+                <tr>
+                    <td>{{ emp.id }}</td>
+                    <td>{{ emp.first_name }}</td>
+                    <td>{{ emp.last_name }}</td>
+                    <td>{{ emp.salary }}</td>
+                    <td>{{ emp.bonus }}</td>
+                    <td>{{ emp.phone }}</td>
+                    <td>{{ emp.dept.name }}</td>
+                    <td>{{ emp.role.name }}</td>
+                    <td>{{ emp.hire_date }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

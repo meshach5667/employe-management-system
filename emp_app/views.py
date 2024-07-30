@@ -79,3 +79,5 @@ def filter_emp(request):
     else:
         return HttpResponse('An Exception Occurred')
 
+def attendance(request):
+    return render(request, 'attendance.html')

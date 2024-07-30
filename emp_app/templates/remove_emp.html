@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove Employee</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Remove Employee</h2>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="emp_id">Employee ID</label>
+                <input type="number" class="form-control" id="emp_id" name="emp_id" required>
+            </div>
+            <button type="submit" class="btn btn-danger">Remove Employee</button>
+        </form>
+        <h3 class="mt-5">All Employees</h3>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Salary</th>
+                    <th>Bonus</th>
+                    <th>Phone</th>
+                    <th>Department</th>
+                    <th>Role</th>
+                    <th>Hire Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for emp in emps %}
+                <tr>
+                    <td>{{ emp.id }}</td>
+                    <td>{{ emp.first_name }}</td>
+                    <td>{{ emp.last_name }}</td>
+                    <td>{{ emp.salary }}</td>
+                    <td>{{ emp.bonus }}</td>
+                    <td>{{ emp.phone }}</td>
+                    <td>{{ emp.dept.name }}</td>
+                    <td>{{ emp.role.name }}</td>
+                    <td>{{ emp.hire_date }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
