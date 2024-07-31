@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leave Application</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f6f9;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: 500;
+            color: #34495e;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        button {
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-weight: 500;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #34495e;
+        }
+
+        .message {
+            margin-top: 20px;
+            text-align: center;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Leave Application</h1>
+        <form method="POST" id="leave-application-form">
+            {% csrf_token %}
+            <label for="employee-name">Employee Name</label>
+            <input type="text" id="employee-name" name="employee-name" required>
+
+            <label for="leave-type">Leave Type</label>
+            <select id="leave-type" name="leave-type" required>
+                <option value="" disabled selected>Select leave type</option>
+                <option value="sick">Sick Leave</option>
+                <option value="vacation">Vacation Leave</option>
+                <option value="casual">Casual Leave</option>
+                <option value="maternity">Maternity Leave</option>
+                <option value="paternity">Paternity Leave</option>
+            </select>
+
+            <label for="start-date">Start Date</label>
+            <input type="date" id="start-date" name="start-date" required>
+
+            <label for="end-date">End Date</label>
+            <input type="date" id="end-date" name="end-date" required>
+
+            <label for="reason">Reason for Leave</label>
+            <textarea id="reason" name="reason" rows="4" required></textarea>
+
+            <button type="submit">Submit Application</button>
+        </form>
+        {% if form.errors %}
+        <div class="message" style="color: red;">
+            {% for field in form %}
+                {% for error in field.errors %}
+                    <p>{{ error }}</p>
+                {% endfor %}
+            {% endfor %}
+            {% for error in form.non_field_errors %}
+                <p>{{ error }}</p>
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% if submitted %}
+        <div class="message">
+            Your leave application has been submitted successfully!
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from . import views
+from .views import apply_for_leave, leave_application_success
 
 urlpatterns = [
     path('', views.index, name='index'),
@@ -24,6 +25,11 @@ urlpatterns = [
     path('remove_emp', views.remove_emp, name='remove_emp'),
     path('remove_emp/<int:emp_id>', views.remove_emp, name='remove_emp'),
     path('filter_emp', views.filter_emp, name='filter_emp'),
-    path('attendance',views.attendance,name ='attendance')
+    path('attendance',views.attendance,name ='attendance'),
+    path('signup',views.signup, name='signup'),
+    path('login', views.login, name = 'login'),
+    path('dashboard', views.dashboard, name = 'dashboard'),
+    path('apply_leave/', apply_for_leave, name='apply_for_leave'),
+    path('leave-application-success/', leave_application_success, name='leave_application_success')
     
 ]

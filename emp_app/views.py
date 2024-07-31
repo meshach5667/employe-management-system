@@ -1,7 +1,14 @@
-from django.shortcuts import render, HttpResponse
-from .models import Employee, Role, Department
+from email import message
+from pyexpat.errors import messages
+from django.shortcuts import redirect, render, HttpResponse
+from .models import Employee, Role, Department,User
 from datetime import datetime
 from django.db.models import Q
+from django.contrib.auth import authenticate,login as auth_login
+
+from django.contrib.auth.decorators import login_required
+from .models import LeaveApplication
+from .forms import LeaveApplicationForm
 
 def index(request):
     return render(request, 'index.html')
@@ -81,3 +88,82 @@ def filter_emp(request):
 
 def attendance(request):
     return render(request, 'attendance.html')
+
+def signup(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        first_name = request.POST['first_name']
+        last_name = request.POST['last_name']
+        email = request.POST['email']
+        password = request.POST['password']
+        
+        if User.objects.filter(username=username).exists():
+            return HttpResponse("User already exists")
+        
+        new_user = User(
+            username=username,
+            first_name=first_name,
+            last_name=last_name,
+            email=email,
+        )
+        new_user.set_password(password)
+        new_user.save()
+
+        return HttpResponse("User added successfully")
+    elif request.method == 'GET':
+        return render(request, 'signup.html')
+
+def login(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        user = authenticate(request, username=username, password=password)
+
+        if user is not None:
+            auth_login(request, user)
+            return redirect('index')
+        else:
+            messages.error(request, 'Invalid username or password')
+
+    return render(request, 'login.html')
+
+def dashboard(request):
+    employees = Employee.objects.all()
+    departments = Department.objects.all()
+    roles = Role.objects.all()
+    total_employees = employees.count()
+    total_departments = departments.count()
+    total_roles = roles.count()
+
+    context = {
+        'employees': employees,
+        'departments': departments,
+        'roles': roles,
+        'total_employees': total_employees,
+        'total_departments': total_departments,
+        'total_roles': total_roles
+    }
+
+    return render(request, 'dashboard.html', context)
+
+
+
+@login_required
+def apply_for_leave(request):
+    if request.method == 'POST':
+        form = LeaveApplicationForm(request.POST)
+        if form.is_valid():
+            leave_application = form.save(commit=False)
+            leave_application.employee = request.user  # Assuming you have a relation to the user model
+            leave_application.save()
+            return redirect('leave_application_success')  # Redirect after a successful application
+    else:
+        form = LeaveApplicationForm()
+
+    return render(request, 'apply_for_leave.html', {'form': form})
+
+
+@login_required
+def leave_application_success(request):
+    return render(request, 'leave_application_success.html')
