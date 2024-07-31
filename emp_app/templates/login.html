@@ -14,7 +14,6 @@
             height: 100vh;
             margin: 0;
         }
-
         .form-container {
             background-color: #ffffff;
             padding: 20px;
@@ -22,12 +21,10 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: 300px;
         }
-
         h2 {
             text-align: center;
             margin-bottom: 20px;
         }
-
         input[type="text"],
         input[type="password"] {
             width: 100%;
@@ -37,11 +34,10 @@
             border-radius: 4px;
             box-sizing: border-box;
         }
-
         button {
             width: 100%;
             padding: 10px;
-            background-color: #5cb85c;
+            background-color: #007bff;
             border: none;
             border-radius: 4px;
             color: white;
@@ -49,16 +45,24 @@
             cursor: pointer;
             margin-top: 10px;
         }
-
         button:hover {
-            background-color: #4cae4c;
+            background-color: #0056b3;
+        }
+        .error {
+            color: red;
+            text-align: center;
+            margin-bottom: 10px;
         }
     </style>
 </head>
 <body>
     <div class="form-container">
-        <form id="loginForm" method="post">
+        <form method="post">
+            {% csrf_token %}
             <h2>Login</h2>
+            {% if error %}
+                <p class="error">{{ error }}</p>
+            {% endif %}
             <input type="text" name="username" placeholder="Username" required>
             <input type="password" name="password" placeholder="Password" required>
             <button type="submit">Login</button>

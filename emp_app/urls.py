@@ -19,6 +19,7 @@ from . import views
 from .views import apply_for_leave, leave_application_success
 
 urlpatterns = [
+    path('admin/', admin.site.urls),
     path('', views.index, name='index'),
     path('all_emp', views.all_emp, name='all_emp'),
     path('add_emp', views.add_emp, name='add_emp'),

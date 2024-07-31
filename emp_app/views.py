@@ -96,35 +96,34 @@ def signup(request):
         last_name = request.POST['last_name']
         email = request.POST['email']
         password = request.POST['password']
-        
-        if User.objects.filter(username=username).exists():
-            return HttpResponse("User already exists")
-        
-        new_user = User(
-            username=username,
-            first_name=first_name,
-            last_name=last_name,
-            email=email,
-        )
-        new_user.set_password(password)
-        new_user.save()
+        confirm_password = request.POST['confirm_password']
 
-        return HttpResponse("User added successfully")
-    elif request.method == 'GET':
-        return render(request, 'signup.html')
+        if password == confirm_password:
+            user = User.objects.create(
+                username=username,
+                first_name=first_name,
+                last_name=last_name,
+                email=email
+            )
+            user.set_password(password) 
+            user.save() 
+            return redirect('login') 
+        else:
+            return render(request, 'signup.html', {'error': 'Passwords do not match'})
 
+    return render(request, 'signup.html')
 def login(request):
     if request.method == 'POST':
-        username = request.POST.get('username')
-        password = request.POST.get('password')
+        username = request.POST['username']
+        password = request.POST['password']
 
+        # Authenticate user
         user = authenticate(request, username=username, password=password)
-
         if user is not None:
             auth_login(request, user)
-            return redirect('index')
+            return redirect('dashboard')  
         else:
-            messages.error(request, 'Invalid username or password')
+            return render(request, 'login.html', {'error': 'Invalid username or password'})
 
     return render(request, 'login.html')
 
